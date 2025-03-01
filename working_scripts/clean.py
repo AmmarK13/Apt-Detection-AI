@@ -12,8 +12,8 @@ from sklearnex import patch_sklearn
 patch_sklearn()  # Accelerates sklearn using Intel MKL
 
 # ========== CONFIGURATION ==========
-INPUT_FILE = r"Cleaned Dataset\02-14-2018.csv"  # 🟢 CHANGE INPUT PATH HERE
-OUTPUT_DIR = r"Recleaned Dataset"               # 🟢 CHANGE OUTPUT DIRECTORY HERE
+INPUT_FILE = r"C:\Users\user\.cache\kagglehub\datasets\ogguy11\apt-detection\versions\1\02-23-2018.csv"  # 🟢 CHANGE INPUT PATH HERE
+OUTPUT_DIR = r"D:\4th semester\SE\project\final_final"               # 🟢 CHANGE OUTPUT DIRECTORY HERE
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 print(f"\n🔧 Configuration:")
@@ -126,12 +126,12 @@ print(f"✅ Final dataset size: {len(cleaned_data)} rows")
 
 # ========== STEP 6: SAVE RESULTS ==========
 print("\n🔄 [6/7] Saving results...")
-cleaned_data.to_csv(os.path.join(OUTPUT_DIR, 'cleaned_data.csv'), index=False)
-outliers_df.to_csv(os.path.join(OUTPUT_DIR, 'all_outliers.csv'), index=False)
+cleaned_data.to_csv(os.path.join(OUTPUT_DIR, '2-23-2018_final_final.csv'), index=False)
+outliers_df.to_csv(os.path.join(OUTPUT_DIR, 'all_outliers23.csv'), index=False)
 
 if label_present:
-    attack_outliers.to_csv(os.path.join(OUTPUT_DIR, 'attack_outliers.csv'), index=False)
-    benign_outliers.to_csv(os.path.join(OUTPUT_DIR, 'benign_outliers.csv'), index=False)
+    attack_outliers.to_csv(os.path.join(OUTPUT_DIR, 'attack_outliers23.csv'), index=False)
+    benign_outliers.to_csv(os.path.join(OUTPUT_DIR, 'benign_outliers23.csv'), index=False)
 
 # ========== STEP 7: VISUALIZATION ==========
 print("\n🔄 [7/7] Generating visualizations...")
@@ -139,13 +139,13 @@ plt.figure(figsize=(12, 6))
 sns.boxplot(data=data.select_dtypes(include=np.number).iloc[:, :10])
 plt.title('Feature Distribution Before Cleaning')
 plt.xticks(rotation=45)
-plt.savefig(os.path.join(OUTPUT_DIR, 'pre_clean.png'), bbox_inches='tight')
+plt.savefig(os.path.join(OUTPUT_DIR, 'pre_clean23.png'), bbox_inches='tight')
 
 plt.figure(figsize=(12, 6))
 sns.boxplot(data=cleaned_data.select_dtypes(include=np.number).iloc[:, :10])
 plt.title('Feature Distribution After Cleaning')
 plt.xticks(rotation=45)
-plt.savefig(os.path.join(OUTPUT_DIR, 'post_clean.png'), bbox_inches='tight')
+plt.savefig(os.path.join(OUTPUT_DIR, 'post_clean23.png'), bbox_inches='tight')
 
 print("\n✅ Cleaning complete! Results saved to:", OUTPUT_DIR)
 print("📊 Visualizations saved as 'pre_clean.png' and 'post_clean.png'")
