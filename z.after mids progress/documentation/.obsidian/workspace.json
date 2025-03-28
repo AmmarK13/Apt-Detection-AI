@@ -78,6 +78,20 @@
             }
           },
           {
+            "id": "1762e2ce2b3c7a0d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "3. labelling.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "3. labelling"
+            }
+          },
+          {
             "id": "004a727413fb12d2",
             "type": "leaf",
             "state": {
@@ -92,7 +106,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -165,7 +179,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "4. data leakage.md",
+                "file": "3. labelling.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -175,7 +189,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 4. data leakage"
+              "title": "Backlinks for 3. labelling"
             }
           },
           {
@@ -184,12 +198,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "4. data leakage.md",
+                "file": "3. labelling.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from 4. data leakage"
+              "title": "Outgoing links from 3. labelling"
             }
           },
           {
@@ -213,13 +227,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "4. data leakage.md",
+                "file": "3. labelling.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 4. data leakage"
+              "title": "Outline of 3. labelling"
             }
           }
         ]
@@ -239,12 +253,15 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "5b7953171de88d0d",
+  "active": "1762e2ce2b3c7a0d",
   "lastOpenFiles": [
+    "5. outliers.md",
+    "Pasted image 20250329013028.png",
+    "Pasted image 20250329013003.png",
+    "4. data leakage.md",
     "Pasted image 20250328222924.png",
     "3. labelling.md",
     "3. data Leakage --failed--.md",
-    "4. data leakage.md",
     "TO DO LIST.md",
     "Pasted image 20250328221651.png",
     "Pasted image 20250328221641.png",
