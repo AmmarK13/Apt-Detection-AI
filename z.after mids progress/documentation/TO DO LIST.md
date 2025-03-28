@@ -1,0 +1,8 @@
+- [ ] missing values
+- [ ] removing duplicates
+- [ ] data leakage or not
+- [ ] outliers 
+    - [ ] sanity checks outlier
+    - [ ] correlation final outlier
+- [ ] encoding
+- [ ] feature selection 
