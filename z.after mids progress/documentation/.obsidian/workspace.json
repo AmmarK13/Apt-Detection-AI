@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1. missing values.md",
+                "file": "Failed Attempt/1. missing values.md",
                 "mode": "source",
                 "source": false
               },
@@ -27,7 +27,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2. duplicates values.md",
+                "file": "Failed Attempt/2. duplicates values.md",
                 "mode": "source",
                 "source": false
               },
@@ -41,7 +41,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "3. data Leakage --failed--.md",
+                "file": "Failed Attempt/3. data Leakage --failed--.md",
                 "mode": "source",
                 "source": false
               },
@@ -69,7 +69,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "4. data leakage.md",
+                "file": "Failed Attempt/4. data leakage.md",
                 "mode": "source",
                 "source": false
               },
@@ -83,12 +83,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "3. labelling.md",
+                "file": "Failed Attempt/1. missing values.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "3. labelling"
+              "title": "1. missing values"
+            }
+          },
+          {
+            "id": "afd8316193e02df8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "1. missing vals.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "1. missing vals"
             }
           },
           {
@@ -106,7 +120,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 6
       }
     ],
     "direction": "vertical"
@@ -179,7 +193,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "3. labelling.md",
+                "file": "1. missing vals.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -189,7 +203,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 3. labelling"
+              "title": "Backlinks for 1. missing vals"
             }
           },
           {
@@ -198,12 +212,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "3. labelling.md",
+                "file": "1. missing vals.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from 3. labelling"
+              "title": "Outgoing links from 1. missing vals"
             }
           },
           {
@@ -227,13 +241,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "3. labelling.md",
+                "file": "1. missing vals.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 3. labelling"
+              "title": "Outline of 1. missing vals"
             }
           }
         ]
@@ -253,22 +267,24 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "1762e2ce2b3c7a0d",
+  "active": "afd8316193e02df8",
   "lastOpenFiles": [
-    "5. outliers.md",
-    "Pasted image 20250329013028.png",
-    "Pasted image 20250329013003.png",
-    "4. data leakage.md",
-    "Pasted image 20250328222924.png",
-    "3. labelling.md",
-    "3. data Leakage --failed--.md",
+    "Failed Attempt/1. missing values.md",
+    "1. missing vals.md",
+    "Untitled",
+    "Failed Attempt/3. labelling.md",
+    "Failed Attempt",
+    "Failed Attempt/5. outliers.md",
+    "Failed Attempt/Pasted image 20250329013028.png",
+    "Failed Attempt/Pasted image 20250329013003.png",
+    "Failed Attempt/4. data leakage.md",
+    "Failed Attempt/Pasted image 20250328222924.png",
+    "Failed Attempt/3. data Leakage --failed--.md",
     "TO DO LIST.md",
-    "Pasted image 20250328221651.png",
-    "Pasted image 20250328221641.png",
-    "2. duplicates values.md",
-    "1. missing values.md",
-    "Pasted image 20250328190652.png",
-    "Pasted image 20250328190524.png",
-    "Untitled"
+    "Failed Attempt/Pasted image 20250328221651.png",
+    "Failed Attempt/Pasted image 20250328221641.png",
+    "Failed Attempt/2. duplicates values.md",
+    "Failed Attempt/Pasted image 20250328190652.png",
+    "Failed Attempt/Pasted image 20250328190524.png"
   ]
 }
