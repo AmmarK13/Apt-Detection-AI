@@ -106,6 +106,20 @@
             }
           },
           {
+            "id": "08393621cb7eee1e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "2. labelling.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "2. labelling"
+            }
+          },
+          {
             "id": "004a727413fb12d2",
             "type": "leaf",
             "state": {
@@ -120,7 +134,7 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 7
       }
     ],
     "direction": "vertical"
@@ -193,7 +207,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "1. missing vals.md",
+                "file": "2. labelling.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -203,7 +217,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 1. missing vals"
+              "title": "Backlinks for 2. labelling"
             }
           },
           {
@@ -212,12 +226,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "1. missing vals.md",
+                "file": "2. labelling.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from 1. missing vals"
+              "title": "Outgoing links from 2. labelling"
             }
           },
           {
@@ -241,13 +255,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "1. missing vals.md",
+                "file": "2. labelling.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 1. missing vals"
+              "title": "Outline of 2. labelling"
             }
           }
         ]
@@ -267,10 +281,12 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "afd8316193e02df8",
+  "active": "08393621cb7eee1e",
   "lastOpenFiles": [
-    "Failed Attempt/1. missing values.md",
+    "Pasted image 20250329035819.png",
     "1. missing vals.md",
+    "2. labelling.md",
+    "Failed Attempt/1. missing values.md",
     "Untitled",
     "Failed Attempt/3. labelling.md",
     "Failed Attempt",
