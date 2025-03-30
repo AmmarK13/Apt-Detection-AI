@@ -1,0 +1,7 @@
+
+# to ignore large csv files for dataset
+UNSW_NB15/cleaned_data/
+UNSW_NB15/data/
+UNSW_NB15/prepared_data/
+UNSW_NB15/prepared_testing_data/
+
