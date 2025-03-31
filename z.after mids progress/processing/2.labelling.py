@@ -3,7 +3,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 #load dataset
-file_path = "/home/kay/Documents/Workspace-S25/SE/SeProject/APT DETECTION/z.after mids progress/dataset/Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv"
+file_path = "/home/kay/Documents/Workspace-S25/SE/SeProject/APT DETECTION/z.after mids progress/dataset/Friday-WorkingHours-Afternoon-DDos.pcap_ISCX_CLEANED_STRATIFIED_CLEAN.csv"
 df = pd.read_csv(file_path)
 
 
@@ -50,21 +50,21 @@ else:
 
 # --------------------- Labelling -----------------------------
 
-# Check if 'Label' column exists
-if "Label" in df.columns:
-    # Convert 'BENIGN' to 0, everything else (attack) to 1
-    df["Label"] = df["Label"].apply(lambda x: 0 if x.strip().upper() == "BENIGN" else 1)
+# # Check if 'Label' column exists
+# if "Label" in df.columns:
+#     # Convert 'BENIGN' to 0, everything else (attack) to 1
+#     df["Label"] = df["Label"].apply(lambda x: 0 if x.strip().upper() == "BENIGN" else 1)
     
-    print("✅ Label Encoding Complete!")
-    print("🔍 Encoded Labels: 0 = BENIGN, 1 = ATTACK")
-else:
-    print("⚠️ No 'Label' column found. Skipping encoding.")
+#     print("✅ Label Encoding Complete!")
+#     print("🔍 Encoded Labels: 0 = BENIGN, 1 = ATTACK")
+# else:
+#     print("⚠️ No 'Label' column found. Skipping encoding.")
  
-# Save encoded dataset --to original file--
-# output_file = "/home/kay/Documents/Workspace-S25/SE/SeProject/APT DETECTION/z.after mids progress/dataset/encoded_dataset.csv"
-df.to_csv(file_path, index=False)
+# # Save encoded dataset --to original file--
+# # output_file = "/home/kay/Documents/Workspace-S25/SE/SeProject/APT DETECTION/z.after mids progress/dataset/encoded_dataset.csv"
+# df.to_csv(file_path, index=False)
 
-print(f"✅ Encoded dataset saved as {file_path}")
+# print(f"✅ Encoded dataset saved as {file_path}")
 
 # ------------------ counting the number of benign and attack instances in the dataset ------------------
 

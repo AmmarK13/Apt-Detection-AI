@@ -148,6 +148,18 @@
             }
           },
           {
+            "id": "d92c66a34b9e282e",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Pasted image 20250331203801.png"
+              },
+              "icon": "lucide-image",
+              "title": "Pasted image 20250331203801"
+            }
+          },
+          {
             "id": "004a727413fb12d2",
             "type": "leaf",
             "state": {
@@ -162,7 +174,7 @@
             }
           }
         ],
-        "currentTab": 9
+        "currentTab": 10
       }
     ],
     "direction": "vertical"
@@ -235,7 +247,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "4.data leakage.md",
+                "file": "TO DO LIST.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -245,7 +257,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 4.data leakage"
+              "title": "Backlinks for TO DO LIST"
             }
           },
           {
@@ -254,12 +266,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "4.data leakage.md",
+                "file": "TO DO LIST.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from 4.data leakage"
+              "title": "Outgoing links from TO DO LIST"
             }
           },
           {
@@ -283,13 +295,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "4.data leakage.md",
+                "file": "TO DO LIST.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 4.data leakage"
+              "title": "Outline of TO DO LIST"
             }
           }
         ]
@@ -309,14 +321,21 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "607d4476ab871ebd",
+  "active": "d92c66a34b9e282e",
   "lastOpenFiles": [
+    "Pasted image 20250331203810.png",
+    "5.outliers.md",
+    "Pasted image 20250331203801.png",
+    "2. labelling.md",
+    "Pasted image 20250331191009.png",
+    "Pasted image 20250331190936.png",
+    "TO DO LIST.md",
+    "Pasted image 20250329051314.png",
+    "4.data leakage.md",
     "Pasted image 20250329050854.png",
     "3.duplicate rows.md",
-    "4.data leakage.md",
     "Pasted image 20250329041521.png",
     "Pasted image 20250329041056.png",
-    "2. labelling.md",
     "Pasted image 20250329035819.png",
     "1. missing vals.md",
     "Failed Attempt/1. missing values.md",
@@ -325,15 +344,8 @@
     "Failed Attempt",
     "Failed Attempt/5. outliers.md",
     "Failed Attempt/Pasted image 20250329013028.png",
-    "Failed Attempt/Pasted image 20250329013003.png",
     "Failed Attempt/4. data leakage.md",
-    "Failed Attempt/Pasted image 20250328222924.png",
     "Failed Attempt/3. data Leakage --failed--.md",
-    "TO DO LIST.md",
-    "Failed Attempt/Pasted image 20250328221651.png",
-    "Failed Attempt/Pasted image 20250328221641.png",
-    "Failed Attempt/2. duplicates values.md",
-    "Failed Attempt/Pasted image 20250328190652.png",
-    "Failed Attempt/Pasted image 20250328190524.png"
+    "Failed Attempt/2. duplicates values.md"
   ]
 }
