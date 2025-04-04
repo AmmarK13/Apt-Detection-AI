@@ -151,12 +151,14 @@
             "id": "d92c66a34b9e282e",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "Pasted image 20250331203801.png"
+                "file": "5.outliers.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "Pasted image 20250331203801"
+              "icon": "lucide-file",
+              "title": "5.outliers"
             }
           },
           {
@@ -323,9 +325,10 @@
   },
   "active": "d92c66a34b9e282e",
   "lastOpenFiles": [
+    "Pasted image 20250401183933.png",
+    "Pasted image 20250331203801.png",
     "Pasted image 20250331203810.png",
     "5.outliers.md",
-    "Pasted image 20250331203801.png",
     "2. labelling.md",
     "Pasted image 20250331191009.png",
     "Pasted image 20250331190936.png",
