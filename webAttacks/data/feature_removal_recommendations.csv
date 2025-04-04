@@ -1,0 +1,18 @@
+feature,status,reason,impact
+host,Remove,Highly correlated with method_PUT (corr: 1.00),Classification correlation: 0.10
+host,Remove,Highly correlated with cookie (corr: 1.00),Classification correlation: 0.10
+contains_sql_injection,Keep,Security-critical feature,Classification correlation: 0.22
+contains_xss,Keep,Security-critical feature,Classification correlation: 0.09
+content_special_chars,Keep,Security-critical feature,Classification correlation: 0.24
+Pragma,Consider Removing,Constant value across all samples,No impact on classification (constant)
+Cache-Control,Consider Removing,Constant value across all samples,No impact on classification (constant)
+Accept,Consider Removing,Constant value across all samples,No impact on classification (constant)
+Accept-encoding,Consider Removing,Constant value across all samples,No impact on classification (constant)
+Accept-charset,Consider Removing,Constant value across all samples,No impact on classification (constant)
+language,Consider Removing,Constant value across all samples,No impact on classification (constant)
+connection,Consider Removing,Constant value across all samples,No impact on classification (constant)
+Length,Consider Removing,Constant value across all samples,No impact on classification (constant)
+contains_path_traversal,Consider Removing,Constant value across all samples,No impact on classification (constant)
+is_mobile,Consider Removing,Constant value across all samples,No impact on classification (constant)
+is_bot,Consider Removing,Constant value across all samples,No impact on classification (constant)
+browser_other,Consider Removing,Constant value across all samples,No impact on classification (constant)

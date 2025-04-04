@@ -1,0 +1,43 @@
+feature,status,reason,impact
+param_count,Remove,Highly correlated with query_length (corr: 1.00),Classification correlation: 0.18
+query_length,Remove,Highly correlated with contains_special_chars (corr: 0.87),Classification correlation: 0.19
+param_count,Remove,Highly correlated with contains_special_chars (corr: 0.87),Classification correlation: 0.18
+content_length,Remove,Highly correlated with content_special_chars (corr: 0.90),Classification correlation: 0.21
+content_length,Remove,Highly correlated with content_numbers (corr: 0.96),Classification correlation: 0.21
+content_numbers,Remove,Highly correlated with content_special_chars (corr: 0.92),Classification correlation: 0.22
+content_length,Remove,Highly correlated with has_hex_encoding (corr: 0.81),Classification correlation: 0.21
+content_special_chars,Remove,Highly correlated with has_hex_encoding (corr: 0.90),Classification correlation: 0.24
+content_numbers,Remove,Highly correlated with has_hex_encoding (corr: 0.84),Classification correlation: 0.22
+method_GET,Remove,Highly correlated with content_length (corr: -0.98),Classification correlation: 0.19
+method_GET,Remove,Highly correlated with content_special_chars (corr: -0.82),Classification correlation: 0.19
+method_GET,Remove,Highly correlated with content_numbers (corr: -0.93),Classification correlation: 0.19
+method_POST,Remove,Highly correlated with content_length (corr: 0.97),Classification correlation: 0.17
+method_POST,Remove,Highly correlated with content_special_chars (corr: 0.81),Classification correlation: 0.17
+method_POST,Remove,Highly correlated with content_numbers (corr: 0.91),Classification correlation: 0.17
+method_POST,Remove,Highly correlated with method_GET (corr: -0.98),Classification correlation: 0.17
+content_type_application,Remove,Highly correlated with content_length (corr: 0.98),Classification correlation: 0.19
+content_type_application,Remove,Highly correlated with content_special_chars (corr: 0.82),Classification correlation: 0.19
+content_type_application,Remove,Highly correlated with content_numbers (corr: 0.93),Classification correlation: 0.19
+content_type_application,Remove,Highly correlated with method_GET (corr: -1.00),Classification correlation: 0.19
+method_POST,Remove,Highly correlated with content_type_application (corr: 0.98),Classification correlation: 0.17
+content_type_other,Remove,Highly correlated with content_length (corr: -0.98),Classification correlation: 0.19
+content_type_other,Remove,Highly correlated with content_special_chars (corr: -0.82),Classification correlation: 0.19
+content_type_other,Remove,Highly correlated with content_numbers (corr: -0.93),Classification correlation: 0.19
+content_type_other,Remove,Highly correlated with method_GET (corr: 1.00),Classification correlation: 0.19
+method_POST,Remove,Highly correlated with content_type_other (corr: -0.98),Classification correlation: 0.17
+content_type_other,Remove,Highly correlated with content_type_application (corr: -1.00),Classification correlation: 0.19
+Accept,Remove,Highly correlated with method_PUT (corr: -1.00),Classification correlation: 0.00
+host,Remove,Highly correlated with method_PUT (corr: 1.00),Classification correlation: 0.10
+classification,Remove,Highly correlated with cookie (corr: 0.85),Classification correlation: 0.00
+host,Remove,Highly correlated with cookie (corr: 1.00),Classification correlation: 0.10
+contains_sql_injection,Keep,Security-critical feature,Classification correlation: 0.22
+contains_xss,Keep,Security-critical feature,Classification correlation: 0.09
+contains_path_traversal,Keep,Security-critical feature,Classification correlation: 0.00
+content_special_chars,Keep,Security-critical feature,Classification correlation: 0.24
+Length,Consider Removing,Low variance: 0.0000,Classification correlation: 0.00
+contains_xss,Consider Removing,Low variance: 0.0060,Classification correlation: 0.09
+contains_path_traversal,Consider Removing,Low variance: 0.0000,Classification correlation: 0.00
+method_PUT,Consider Removing,Low variance: 0.0065,Classification correlation: 0.10
+is_mobile,Consider Removing,Low variance: 0.0000,Classification correlation: 0.00
+is_bot,Consider Removing,Low variance: 0.0000,Classification correlation: 0.00
+browser_other,Consider Removing,Low variance: 0.0000,Classification correlation: 0.00
