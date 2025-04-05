@@ -4,12 +4,16 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.model_selection import train_test_split, StratifiedKFold, GridSearchCV
 from sklearn.preprocessing import StandardScaler
-from sklearn.metrics import (classification_report, confusion_matrix, 
-                             roc_auc_score, precision_recall_curve, RocCurveDisplay)
+from sklearn.metrics import (
+    classification_report, confusion_matrix, 
+    roc_auc_score, precision_recall_curve, 
+    RocCurveDisplay, f1_score  # Added f1_score here
+)
 from xgboost import XGBClassifier
 import joblib
 import json
 from datetime import datetime
+
 
 # Configuration
 DATA_PATH = "/home/kay/Documents/Workspace-S25/SE/SeProject/APT DETECTION/z.after mids progress/dataset/Friday-WorkingHours-Afternoon-DDos.pcap_ISCX_CLEANED_OPTIMAL_FEATURES.csv"
@@ -27,7 +31,7 @@ def load_data():
     X = df.drop('Label', axis=1)
     y = df['Label']
     
-    return X, y
+    return X, y, X.columns.tolist()  # Return feature names
 
 # 2. Class-Balanced Data Splitting
 def split_data(X, y):
@@ -39,21 +43,24 @@ def split_data(X, y):
         random_state=42
     )
     
-    # Optional: Scale features (XGBoost doesn't require, but useful for comparison)
+    # Scale features and preserve column names
     scaler = StandardScaler()
-    X_train = scaler.fit_transform(X_train)
-    X_test = scaler.transform(X_test)
+    X_train = pd.DataFrame(scaler.fit_transform(X_train), columns=X.columns)
+    X_test = pd.DataFrame(scaler.transform(X_test), columns=X.columns)
     
     return X_train, X_test, y_train, y_test, scaler
 
 # 3. Model Training with Cross-Validation
 def train_model(X_train, y_train):
-    # Base model with class weighting
+    # Calculate class weight dynamically
+    class_ratio = (y_train == 0).sum() / (y_train == 1).sum()
+    
+    # Updated model parameters
     model = XGBClassifier(
         tree_method='hist',
-        scale_pos_weight=1.75,  # Matches dataset imbalance
+        scale_pos_weight=class_ratio,
         eval_metric='logloss',
-        use_label_encoder=False
+        enable_categorical=False  # Replaces use_label_encoder
     )
     
     # Hyperparameter grid
@@ -67,7 +74,6 @@ def train_model(X_train, y_train):
     # Stratified 5-fold CV
     cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
     
-    # Grid search
     grid = GridSearchCV(
         estimator=model,
         param_grid=param_grid,
@@ -80,7 +86,6 @@ def train_model(X_train, y_train):
     grid.fit(X_train, y_train)
     
     return grid.best_estimator_, grid.best_params_
-
 # 4. Model Evaluation
 def evaluate_model(model, X_test, y_test):
     # Predictions
@@ -115,14 +120,22 @@ def evaluate_model(model, X_test, y_test):
     plt.savefig(f"{RESULTS_DIR}pr_curve.png")
 
 # 5. Model Saving & Metadata
-def save_artifacts(model, scaler, params):
-    # Save model
-    joblib.dump({'model': model, 'scaler': scaler}, MODEL_SAVE_PATH)
+def save_artifacts(model, scaler, params, feature_names, X_test, y_test):
+    # Generate predictions for saving
+    y_pred = model.predict(X_test)
+    y_proba = model.predict_proba(X_test)[:, 1]
+    
+    # Save model with metadata
+    joblib.dump({
+        'model': model,
+        'scaler': scaler,
+        'feature_names': feature_names
+    }, MODEL_SAVE_PATH)
     
     # Save metadata
     metadata = {
         'training_date': datetime.now().isoformat(),
-        'features': list(model.get_booster().feature_names),
+        'features': feature_names,
         'best_params': params,
         'metrics': {
             'roc_auc': roc_auc_score(y_test, y_proba),
@@ -133,10 +146,10 @@ def save_artifacts(model, scaler, params):
     with open(f"{RESULTS_DIR}model_metadata.json", 'w') as f:
         json.dump(metadata, f, indent=2)
 
-# Main Execution
+# Update main execution
 if __name__ == "__main__":
     # Load data
-    X, y = load_data()
+    X, y, feature_names = load_data()
     
     # Split data
     X_train, X_test, y_train, y_test, scaler = split_data(X, y)
@@ -149,6 +162,6 @@ if __name__ == "__main__":
     # Evaluate
     evaluate_model(best_model, X_test, y_test)
     
-    # Save artifacts
-    save_artifacts(best_model, scaler, best_params)
+    # Save artifacts with test data
+    save_artifacts(best_model, scaler, best_params, feature_names, X_test, y_test)
     print(f"Model saved to {MODEL_SAVE_PATH}")

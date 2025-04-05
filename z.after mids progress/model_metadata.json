@@ -1,0 +1,39 @@
+{
+  "training_date": "2025-04-05T08:46:57.898967",
+  "features": [
+    "Bwd IAT Mean",
+    "Flow Bytes/s",
+    "Flow Packets/s",
+    "SYN Flag Count",
+    "Fwd Packet Length Min",
+    "Bwd IAT Total",
+    "Flow Duration",
+    "Init_Win_bytes_forward",
+    "act_data_pkt_fwd",
+    "Fwd IAT Min",
+    "Max Packet Length",
+    "Fwd Packets/s",
+    "Init_Win_bytes_backward",
+    "Bwd IAT Max",
+    "Flow IAT Mean",
+    "Bwd Packets/s",
+    "Flow IAT Min",
+    "URG Flag Count",
+    "Total Length of Fwd Packets",
+    "Total Fwd Packets",
+    "Fwd Packet Length Max",
+    "PSH Flag Count",
+    "Bwd Packet Length Min",
+    "Bwd IAT Std"
+  ],
+  "best_params": {
+    "learning_rate": 0.1,
+    "max_depth": 3,
+    "n_estimators": 100,
+    "subsample": 0.8
+  },
+  "metrics": {
+    "roc_auc": 0.9999999999999999,
+    "f1_score": 0.9998496466696737
+  }
+}
