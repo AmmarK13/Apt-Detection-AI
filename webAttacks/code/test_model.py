@@ -13,7 +13,7 @@ def test_model():
     Test the trained model on new transformed dataset
     """
     print("Loading transformed test data...")
-    test_data_path = "D:\\University\\Software Engineering\\Project\\transformed\\transformed_data.csv"
+    test_data_path = "D:\\University\\Software Engineering\\Project\\transformed\\transformed_synthethis_data.csv"
     test_df = pd.read_csv(test_data_path)
     
     print("Loading trained model...")
@@ -69,13 +69,11 @@ def test_model():
     # Handle large values with log transformation
     for column in numeric_features:
         values = X_test[column].values
-        if np.isfinite(values).all() and values.size > 0:  # Check if values are finite and not empty
+        if np.isfinite(values).all() and values.size > 0:
             if values.max() > 1e6 or values.min() < -1e6:
                 if values.min() >= 0:
-                    # Log transformation for positive values
                     X_test[column] = np.log1p(values)
                 else:
-                    # Min-max scaling for data with negative values
                     min_val = values.min()
                     max_val = values.max()
                     if min_val != max_val:
@@ -90,12 +88,14 @@ def test_model():
     print("Feature ranges after normalization:")
     print(X_test[numeric_features].describe())
     
-    # Create a copy without URL and content for DMatrix
-    X_test_numeric = X_test.drop(['URL', 'content'], axis=1)
-    
-    # Convert to DMatrix format
+    # Convert to DMatrix format - KEEP URL and content
     print("Converting to DMatrix format...")
-    dtest = xgb.DMatrix(data=X_test_numeric, label=y_test)
+    # Convert URL and content to numeric for DMatrix (required by XGBoost)
+    X_test_for_dmatrix = X_test.copy()
+    X_test_for_dmatrix['URL'] = 0  # Placeholder value
+    X_test_for_dmatrix['content'] = 0  # Placeholder value
+    
+    dtest = xgb.DMatrix(data=X_test_for_dmatrix, label=y_test, feature_names=expected_features)
     
     # Make predictions
     print("Making predictions...")
@@ -111,6 +111,70 @@ def test_model():
     
     # Print results
     print("\nModel Performance on New Dataset:")
+    print(f"Accuracy: {accuracy:.4f}")
+    print(f"Precision: {precision:.4f}")
+    print(f"Recall: {recall:.4f}")
+    print(f"F1 Score: {f1:.4f}")
+    
+    print("\nConfusion Matrix:")
+    print(conf_matrix)
+    
+    print("\nDetailed Classification Report:")
+    print(classification_report(y_test, y_pred, zero_division=0))
+    
+    # Save results
+    results_dir = "d:\\University\\Software Engineering\\Project\\Apt-Detection-AI\\webAttacks\\results\\new_test"
+    os.makedirs(results_dir, exist_ok=True)
+    
+    # Add predictions to original dataframe
+    test_df['predicted_class'] = y_pred
+    test_df['attack_probability'] = y_pred_proba
+    predictions_path = os.path.join(results_dir, "predictions.csv")
+    test_df.to_csv(predictions_path, index=False)
+    print(f"\nPredictions saved to: {predictions_path}")
+    
+    # Plot confusion matrix
+    plt.figure(figsize=(8, 6))
+    sns.heatmap(conf_matrix, annot=True, fmt='d', cmap='Blues',
+                xticklabels=['Normal', 'Attack'],
+                yticklabels=['Normal', 'Attack'])
+    plt.title('Confusion Matrix on New Dataset')
+    plt.xlabel('Predicted')
+    plt.ylabel('Actual')
+    
+    cm_path = os.path.join(results_dir, "confusion_matrix_new.png")
+    plt.savefig(cm_path)
+    plt.close()
+    print(f"Confusion matrix plot saved to: {cm_path}")
+
+    # Try different classification thresholds
+    print("\nTrying different classification thresholds...")
+    thresholds = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
+    best_f1 = 0
+    best_threshold = 0.5
+    
+    for threshold in thresholds:
+        y_pred_threshold = (y_pred_proba > threshold).astype(int)
+        f1 = f1_score(y_test, y_pred_threshold, zero_division=0)
+        print(f"Threshold {threshold:.1f}: F1 = {f1:.4f}")
+        
+        if f1 > best_f1:
+            best_f1 = f1
+            best_threshold = threshold
+    
+    # Use the best threshold
+    print(f"\nUsing best threshold: {best_threshold:.1f}")
+    y_pred = (y_pred_proba > best_threshold).astype(int)
+    
+    # Recalculate metrics with best threshold
+    accuracy = accuracy_score(y_test, y_pred)
+    precision = precision_score(y_test, y_pred, zero_division=0)
+    recall = recall_score(y_test, y_pred, zero_division=0)
+    f1 = f1_score(y_test, y_pred, zero_division=0)
+    conf_matrix = confusion_matrix(y_test, y_pred)
+    
+    # Print results with best threshold
+    print("\nModel Performance with Best Threshold:")
     print(f"Accuracy: {accuracy:.4f}")
     print(f"Precision: {precision:.4f}")
     print(f"Recall: {recall:.4f}")

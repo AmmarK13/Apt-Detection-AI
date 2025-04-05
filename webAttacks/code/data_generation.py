@@ -2,13 +2,14 @@ import pandas as pd
 import random
 import string
 import os
+import re
 
 def random_string(length):
     """Generate a random string of specified length"""
     return ''.join(random.choice(string.ascii_letters + string.digits) for _ in range(length))
 
 def create_attack_request(attack_type):
-    """Create different types of attack requests"""
+    """Create different types of attack requests similar to CSIC dataset"""
     if attack_type == 'sql_injection':
         payloads = [
             "' OR 1=1 --",
@@ -18,8 +19,8 @@ def create_attack_request(attack_type):
             "admin' --",
             "1; SELECT * FROM information_schema.tables"
         ]
-        url = f"/search?q={random.choice(payloads)}"
-        content = f"username={random.choice(payloads)}"
+        url = f"/tienda1/publico/anadir.jsp?id={random.choice(payloads)}"
+        content = f"username={random.choice(payloads)}&password=test123"
         
     elif attack_type == 'xss':
         payloads = [
@@ -29,8 +30,8 @@ def create_attack_request(attack_type):
             "<svg onload='alert(1)'>",
             "'\"><script>alert(1)</script>"
         ]
-        url = f"/page?id={random.choice(payloads)}"
-        content = f"comment={random.choice(payloads)}"
+        url = f"/tienda1/publico/registro.jsp?nombre={random.choice(payloads)}"
+        content = f"nombre={random.choice(payloads)}&apellidos=test&email=test@example.com"
         
     elif attack_type == 'path_traversal':
         payloads = [
@@ -40,7 +41,7 @@ def create_attack_request(attack_type):
             "/var/www/html/config.php",
             "../../.env"
         ]
-        url = f"/download?file={random.choice(payloads)}"
+        url = f"/tienda1/publico/img.jsp?file={random.choice(payloads)}"
         content = ""
         
     elif attack_type == 'command_injection':
@@ -51,53 +52,71 @@ def create_attack_request(attack_type):
             "|| whoami",
             "`ping -c 4 attacker.com`"
         ]
-        url = f"/execute?cmd=ping {random.choice(payloads)}"
+        url = f"/tienda1/publico/exec.jsp?cmd=ping {random.choice(payloads)}"
         content = f"command=ls {random.choice(payloads)}"
     
     else:  # Default to a generic attack
-        url = "/vulnerable?param=attack"
-        content = "malicious=data"
+        url = "/tienda1/publico/login.jsp?username=admin'--"
+        content = "username=admin'--&password=anything"
     
     return {
         'Method': random.choice(['GET', 'POST']),
         'URL': url,
         'content': content,
-        'content-type': random.choice(['application/x-www-form-urlencoded', 'application/json']),
-        'Cookie': f'session={random_string(32)}',
-        'Length': random.randint(100, 2000),
-        'User-Agent': random.choice([
-            'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
-            'Mozilla/5.0 (Linux; Android 10)',
-            'sqlmap/1.4.7',
-            'Nikto/2.1.6',
-            'ZAP/2.10.0'
-        ])
+        'content-type': 'application/x-www-form-urlencoded',
+        'Accept': 'text/html,application/xhtml+xml,application/xml',
+        'cookie': f'JSESSIONID={random_string(32)}',
+        'classification': 1  # 1 for attack
     }
 
 def generate_synthetic_http_dataset(num_normal=1000, num_attacks=200):
     data = []
     
-    # Generate normal requests
+    # Generate normal requests based on CSIC patterns
+    normal_urls = [
+        '/tienda1/publico/index.jsp',
+        '/tienda1/publico/login.jsp',
+        '/tienda1/publico/registro.jsp',
+        '/tienda1/publico/productos.jsp',
+        '/tienda1/publico/detalles.jsp',
+        '/tienda1/publico/micarrito.jsp',
+        '/tienda1/publico/pagar.jsp',
+        '/tienda1/publico/logout.jsp'
+    ]
+    
+    normal_params = [
+        {'nombre': 'John', 'apellidos': 'Doe', 'email': 'john@example.com'},
+        {'username': 'user123', 'password': 'pass123'},
+        {'id': '42', 'cantidad': '2'},
+        {'tarjeta': '4111111111111111', 'cvv': '123', 'fecha': '12/25'},
+        {'buscar': 'producto', 'categoria': 'electronica'}
+    ]
+    
     for i in range(num_normal):
         # Create normal HTTP request patterns
+        url = random.choice(normal_urls)
+        params = random.choice(normal_params)
+        
+        # Add query parameters to some URLs
+        if random.random() < 0.3 and '?' not in url:
+            param_key = random.choice(list(params.keys()))
+            url += f'?{param_key}={params[param_key]}'
+            
+        # Create content for POST requests
+        if random.random() < 0.5:  # 50% POST, 50% GET
+            method = 'POST'
+            content = '&'.join([f"{k}={v}" for k, v in params.items()])
+        else:
+            method = 'GET'
+            content = ''
+            
         request = {
-            'Method': random.choice(['GET', 'POST', 'HEAD', 'PUT']),
-            'URL': random.choice([
-                f'/index.html',
-                f'/products/{random.randint(1, 100)}',
-                f'/users/profile/{random_string(8)}',
-                f'/search?q={random_string(5)}',
-                f'/api/v1/resources/{random.randint(1, 50)}'
-            ]),
-            'content': '' if random.choice([True, False]) else f'param1={random_string(8)}&param2={random_string(5)}',
-            'content-type': random.choice(['application/x-www-form-urlencoded', 'application/json', 'text/plain']),
-            'Cookie': f'session={random_string(32)}; pref={random_string(10)}',
-            'Length': random.randint(10, 500),
-            'User-Agent': random.choice([
-                'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
-                'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.1 Safari/605.1.15',
-                'Mozilla/5.0 (X11; Linux x86_64; rv:89.0) Gecko/20100101 Firefox/89.0'
-            ]),
+            'Method': method,
+            'URL': url,
+            'content': content,
+            'content-type': 'application/x-www-form-urlencoded',
+            'Accept': 'text/html,application/xhtml+xml,application/xml',
+            'cookie': f'JSESSIONID={random_string(32)}',
             'classification': 0  # 0 for normal
         }
         data.append(request)
@@ -108,7 +127,6 @@ def generate_synthetic_http_dataset(num_normal=1000, num_attacks=200):
         # Create attack patterns
         attack_type = random.choice(attack_types)
         request = create_attack_request(attack_type)
-        request['classification'] = 1  # 1 for attack
         data.append(request)
     
     # Convert to DataFrame and shuffle
