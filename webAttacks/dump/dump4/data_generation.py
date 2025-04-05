@@ -69,7 +69,7 @@ def create_attack_request(attack_type):
         'classification': 1  # 1 for attack
     }
 
-def generate_synthetic_http_dataset(num_normal=1000, num_attacks=200):
+def generate_synthetic_http_dataset(num_normal=10000, num_attacks=2080):
     data = []
     
     # Generate normal requests based on CSIC patterns
@@ -147,7 +147,7 @@ def save_dataset(df, filename="synthetic_http_dataset.csv"):
 if __name__ == "__main__":
     # Generate dataset with 2000 normal requests and 500 attack requests
     print("Generating synthetic HTTP dataset...")
-    dataset = generate_synthetic_http_dataset(num_normal=2000, num_attacks=500)
+    dataset = generate_synthetic_http_dataset(num_normal=10000, num_attacks=810)
     
     # Display dataset statistics
     print(f"Dataset shape: {dataset.shape}")
