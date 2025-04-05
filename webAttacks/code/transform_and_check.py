@@ -129,9 +129,9 @@ def transform_and_check(input_path):
     
     if is_compatible:
         # Save transformed data
-        output_dir = "d:\\University\\Software Engineering\\Project\\Apt-Detection-AI\\webAttacks\\data\\transformed"
+        output_dir = "D:\\University\\Software Engineering\\Project\\transformed"
         os.makedirs(output_dir, exist_ok=True)
-        output_path = os.path.join(output_dir, "transformed_data.csv")
+        output_path = os.path.join(output_dir, "transformed_synthethis_data.csv")
         transformed_data.to_csv(output_path, index=False)
         print(f"\nTransformed data saved to: {output_path}")
     else:
@@ -157,5 +157,5 @@ def transform_and_check(input_path):
 
 if __name__ == "__main__":
     # Example usage with your dataset
-    input_path = "D:\\University\\Software Engineering\\Project\\Cleaned Dataset\\Thursday-WorkingHours-Morning-WebAttacks.pcap_ISCX.csv"
+    input_path = "D:\\University\\Software Engineering\\Project\\generated data\\synthetic_http_dataset.csv"
     transformed_data, is_compatible = transform_and_check(input_path)
