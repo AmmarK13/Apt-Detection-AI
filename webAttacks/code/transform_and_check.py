@@ -146,8 +146,8 @@ def transform_and_check(input_path):
         # Reorder columns to match original data
         transformed_data = transformed_data[original_data.columns]
         
-        # Save transformed data
-        output_dir = "d:\\University\\Software Engineering\\Project\\Apt-Detection-AI\\webAttacks\\data\\transformed"
+        # Save transformed data with updated path
+        output_dir = "D:\\University\\Software Engineering\\Project\\transformed"
         os.makedirs(output_dir, exist_ok=True)
         output_path = os.path.join(output_dir, "transformed_data.csv")
         transformed_data.to_csv(output_path, index=False)
