@@ -153,12 +153,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "5.outliers.md",
+                "file": "6.feature selection.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "5.outliers"
+              "title": "6.feature selection"
             }
           },
           {
@@ -325,10 +325,14 @@
   },
   "active": "d92c66a34b9e282e",
   "lastOpenFiles": [
+    "Pasted image 20250405063122.png",
+    "Pasted image 20250405063106.png",
+    "Pasted image 20250405063054.png",
+    "5.outliers.md",
+    "6.feature selection.md",
     "Pasted image 20250401183933.png",
     "Pasted image 20250331203801.png",
     "Pasted image 20250331203810.png",
-    "5.outliers.md",
     "2. labelling.md",
     "Pasted image 20250331191009.png",
     "Pasted image 20250331190936.png",
@@ -338,15 +342,12 @@
     "Pasted image 20250329050854.png",
     "3.duplicate rows.md",
     "Pasted image 20250329041521.png",
-    "Pasted image 20250329041056.png",
-    "Pasted image 20250329035819.png",
     "1. missing vals.md",
     "Failed Attempt/1. missing values.md",
     "Untitled",
     "Failed Attempt/3. labelling.md",
     "Failed Attempt",
     "Failed Attempt/5. outliers.md",
-    "Failed Attempt/Pasted image 20250329013028.png",
     "Failed Attempt/4. data leakage.md",
     "Failed Attempt/3. data Leakage --failed--.md",
     "Failed Attempt/2. duplicates values.md"
