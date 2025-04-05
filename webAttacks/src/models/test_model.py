@@ -4,6 +4,8 @@ from pathlib import Path
 import logging
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix
 from tensorflow.keras.models import load_model
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
@@ -71,14 +73,14 @@ class ModelTester:
             for metric, value in metrics.items():
                 logger.info(f"{metric.capitalize()}: {value:.4f}")
 
-            return metrics, conf_matrix
+            return metrics, conf_matrix, y_pred
 
         except Exception as e:
             logger.error(f"Error evaluating model: {e}")
             raise
 
-    def save_results(self, metrics: dict, conf_matrix: np.ndarray):
-        """Save evaluation results to files."""
+    def save_results(self, metrics: dict, conf_matrix: np.ndarray, y_pred):
+        """Save evaluation results to files and generate visualizations."""
         try:
             # Create output directory if it doesn't exist
             self.output_dir.mkdir(parents=True, exist_ok=True)
@@ -93,12 +95,66 @@ class ModelTester:
             conf_matrix_path = self.output_dir / 'confusion_matrix.csv'
             conf_matrix_df.to_csv(conf_matrix_path, index=False)
 
+            # Generate and save confusion matrix visualization
+            self.plot_confusion_matrix(conf_matrix)
+            
+            # Generate and save metrics visualization
+            self.plot_metrics(metrics)
+
             logger.info(f"Test metrics saved to: {metrics_path}")
             logger.info(f"Confusion matrix saved to: {conf_matrix_path}")
+            logger.info(f"Visualizations saved to: {self.output_dir}")
 
         except Exception as e:
             logger.error(f"Error saving results: {e}")
             raise
+            
+    def plot_confusion_matrix(self, conf_matrix):
+        """Plot and save confusion matrix visualization."""
+        plt.figure(figsize=(8, 6))
+        sns.heatmap(
+            conf_matrix,
+            annot=True,
+            fmt='d',
+            cmap='Blues',
+            xticklabels=['Normal', 'Attack'],
+            yticklabels=['Normal', 'Attack']
+        )
+        plt.title('Confusion Matrix')
+        plt.ylabel('True Label')
+        plt.xlabel('Predicted Label')
+        plt.tight_layout()
+        plt.savefig(self.output_dir / 'confusion_matrix_viz.png')
+        plt.close()
+        
+    def plot_metrics(self, metrics):
+        """Plot and save metrics visualization."""
+        plt.figure(figsize=(10, 6))
+        bars = plt.bar(
+            metrics.keys(),
+            metrics.values(),
+            color=['#2C7BB6', '#D7191C', '#FDAE61', '#ABD9E9']
+        )
+        
+        # Add value labels on top of bars
+        for bar in bars:
+            height = bar.get_height()
+            plt.text(
+                bar.get_x() + bar.get_width()/2.,
+                height + 0.01,
+                f'{height:.4f}',
+                ha='center',
+                va='bottom',
+                fontweight='bold'
+            )
+            
+        plt.ylim(0, 1.1)
+        plt.title('Model Performance Metrics')
+        plt.ylabel('Score')
+        plt.grid(axis='y', linestyle='--', alpha=0.7)
+        plt.tight_layout()
+        plt.savefig(self.output_dir / 'metrics_viz.png')
+        plt.close()
 
     def test(self):
         """Execute the complete model testing pipeline."""
@@ -106,16 +162,16 @@ class ModelTester:
         
         self.load_model()
         self.load_test_data()
-        metrics, conf_matrix = self.evaluate_model()
-        self.save_results(metrics, conf_matrix)
+        metrics, conf_matrix, y_pred = self.evaluate_model()
+        self.save_results(metrics, conf_matrix, y_pred)
         
         logger.info("Model testing completed successfully")
         return metrics
 
 def main():
     # Define paths
-    model_path = "src/models/web_attack_model.h5"  # Updated to match the saved model name in train_model.py
-    test_data_path = "data/split/test_data.csv"
+    model_path = "src/models/web_attack_model.h5"  # Updated path to match where train_model.py saves the model
+    test_data_path = "data/features/engineered_features.csv"  # Using the engineered features
     output_dir = "results"
     
     # Initialize and run the tester
