@@ -52,19 +52,39 @@ class ModelTester:
             raise
 
     def evaluate_model(self):
-        """Evaluate model performance using various metrics."""
+        """Evaluate model performance using various metrics and attack pattern analysis."""
         try:
             # Make predictions
             y_pred_proba = self.model.predict(self.X_test)
             y_pred = (y_pred_proba > 0.5).astype(int)
 
-            # Calculate metrics
+            # Calculate overall metrics
             metrics = {
                 'accuracy': accuracy_score(self.y_test, y_pred),
                 'precision': precision_score(self.y_test, y_pred, average='weighted'),
                 'recall': recall_score(self.y_test, y_pred, average='weighted'),
                 'f1_score': f1_score(self.y_test, y_pred, average='weighted')
             }
+
+            # Analyze performance for each attack pattern using the correct feature names
+            attack_patterns = {
+                'sql_injection': 'sql_indicator',
+                'xss': 'xss_indicator',
+                'path_traversal': 'path_traversal',
+                'command_injection': 'cmd_injection'
+            }
+            for attack_type, feature_name in attack_patterns.items():
+                if feature_name in self.X_test.columns:
+                    pattern_mask = self.X_test[feature_name] == 1
+                    if pattern_mask.any():
+                        pattern_metrics = {
+                            f'{attack_type}_precision': precision_score(self.y_test[pattern_mask], y_pred[pattern_mask], average='binary'),
+                            f'{attack_type}_recall': recall_score(self.y_test[pattern_mask], y_pred[pattern_mask], average='binary'),
+                            f'{attack_type}_f1': f1_score(self.y_test[pattern_mask], y_pred[pattern_mask], average='binary')
+                        }
+                        metrics.update(pattern_metrics)
+                    logger.info(f"Performance for {attack_type}: {pattern_metrics}")
+
 
             # Calculate confusion matrix
             conf_matrix = confusion_matrix(self.y_test, y_pred)

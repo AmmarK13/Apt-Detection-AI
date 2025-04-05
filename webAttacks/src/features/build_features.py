@@ -41,7 +41,8 @@ class FeatureBuilder:
         try:
             # Extract features from URL parameters if available
             if 'url' in self.df.columns:
-                # TF-IDF features
+                # TF-IDF features with increased max_features and n-gram range
+                self.tfidf = TfidfVectorizer(max_features=300, ngram_range=(1, 4))
                 url_features = self.tfidf.fit_transform(self.df['url'].fillna(''))
                 url_feature_names = [f'url_tfidf_{i}' for i in range(url_features.shape[1])]
                 url_features_df = pd.DataFrame(
@@ -49,7 +50,8 @@ class FeatureBuilder:
                     columns=url_feature_names
                 )
                 
-                # Count vectorizer features for common attack patterns
+                # Enhanced count vectorizer features
+                self.count_vec = CountVectorizer(max_features=150, ngram_range=(1, 3))
                 count_features = self.count_vec.fit_transform(self.df['url'].fillna(''))
                 count_feature_names = [f'url_count_{i}' for i in range(count_features.shape[1])]
                 count_features_df = pd.DataFrame(
@@ -57,25 +59,67 @@ class FeatureBuilder:
                     columns=count_feature_names
                 )
                 
-                # Special character ratios
+                # Advanced character-based features
                 self.df['special_char_ratio'] = self.df['url'].fillna('').apply(
                     lambda x: len(re.findall(r'[^a-zA-Z0-9\s]', x)) / (len(x) + 1)
                 )
+                self.df['numeric_ratio'] = self.df['url'].fillna('').apply(
+                    lambda x: len(re.findall(r'[0-9]', x)) / (len(x) + 1)
+                )
+                self.df['uppercase_ratio'] = self.df['url'].fillna('').apply(
+                    lambda x: len(re.findall(r'[A-Z]', x)) / (len(x) + 1)
+                )
                 
-                # SQL injection indicators
+                # Enhanced SQL injection detection
+                sql_patterns = (
+                    r'\b(select|union|insert|delete|from|drop|update|where|having|group\s+by)\b|'
+                    r'[\"\']\s*or\s*[\"\']|'
+                    r'\b(and|or)\s+\d+\s*=\s*\d+|'
+                    r'\b(sleep|benchmark|wait)\s*\(|'
+                    r'--\s*$|#\s*$'
+                )
                 self.df['sql_indicator'] = self.df['url'].fillna('').apply(
-                    lambda x: int(bool(re.search(r'(\b(select|union|insert|delete|from|drop|update|where)\b)|([\"\']\s*or\s*[\"\'])', x.lower())))
+                    lambda x: int(bool(re.search(sql_patterns, x.lower())))
                 )
                 
-                # XSS attack indicators
+                # Enhanced XSS attack detection
+                xss_patterns = (
+                    r'(<script|javascript:|on\w+\s*=|alert\s*\()|'
+                    r'(\\x[0-9a-fA-F]{2})|'
+                    r'(document\.|window\.|eval\()|'
+                    r'(base64|\\u[0-9a-fA-F]{4})|'
+                    r'(<[^>]*>)'
+                )
                 self.df['xss_indicator'] = self.df['url'].fillna('').apply(
-                    lambda x: int(bool(re.search(r'(<script|javascript:|on\w+\s*=|alert\s*\()', x.lower())))
+                    lambda x: int(bool(re.search(xss_patterns, x.lower())))
                 )
                 
-                # Path traversal attempts
-                self.df['path_traversal'] = self.df['url'].fillna('').apply(
-                    lambda x: int(bool(re.search(r'(\.\./|\.\.\\|/\.\.|\\\.\.)', x)))
+                # Enhanced path traversal detection
+                path_patterns = (
+                    r'(\.\./|\.\.\\|/\.\.|\\\.\.)|'
+                    r'(%2e%2e|%252e)|'
+                    r'(\/etc\/|\\windows\\)'
                 )
+                self.df['path_traversal'] = self.df['url'].fillna('').apply(
+                    lambda x: int(bool(re.search(path_patterns, x)))
+                )
+                
+                # Command injection detection
+                cmd_patterns = (
+                    r'(\||;|`|\$\(|\${)|'
+                    r'(cat|echo|wget|curl|ping|nc|netcat)|'
+                    r'(\/bin\/|\\system32\\)'
+                )
+                self.df['cmd_injection'] = self.df['url'].fillna('').apply(
+                    lambda x: int(bool(re.search(cmd_patterns, x.lower())))
+                )
+                
+                # Entropy-based features
+                def calculate_entropy(string):
+                    prob = [float(string.count(c)) / len(string) for c in set(string)]
+                    return sum([(p * np.log2(p)) for p in prob]) * -1
+                
+                self.df['url_entropy'] = self.df['url'].fillna('').apply(calculate_entropy)
                 
                 # Concatenate all features
                 self.df = pd.concat([self.df, url_features_df, count_features_df], axis=1)

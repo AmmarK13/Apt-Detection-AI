@@ -60,21 +60,26 @@ class WebAttackModel:
             raise
 
     def build_model(self):
-        """Build an enhanced neural network model with regularization and batch normalization."""
+        """Build an enhanced neural network model optimized for attack detection."""
         try:
             self.model = Sequential([
-                # First layer with L2 regularization
-                Dense(256, activation='relu', input_shape=(self.X_train.shape[1],),
+                # Input layer with increased capacity for new features
+                Dense(512, activation='relu', input_shape=(self.X_train.shape[1],),
                       kernel_regularizer=l2(0.01)),
                 BatchNormalization(),
                 Dropout(0.4),
                 
-                # Second layer with increased capacity
+                # First hidden layer for pattern recognition
+                Dense(256, activation='relu', kernel_regularizer=l2(0.01)),
+                BatchNormalization(),
+                Dropout(0.3),
+                
+                # Second hidden layer for attack pattern analysis
                 Dense(128, activation='relu', kernel_regularizer=l2(0.01)),
                 BatchNormalization(),
                 Dropout(0.3),
                 
-                # Third layer for feature abstraction
+                # Third layer for high-level feature abstraction
                 Dense(64, activation='relu', kernel_regularizer=l2(0.01)),
                 BatchNormalization(),
                 Dropout(0.2),
