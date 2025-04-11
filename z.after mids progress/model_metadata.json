@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "training_date": "2025-04-05T20:50:19.658201",
   "feature_count": 24,
   "best_parameters": {
@@ -15,6 +16,10 @@
     "recall": 1.0
   },
   "feature_list": [
+=======
+  "training_date": "2025-04-05T08:46:57.898967",
+  "features": [
+>>>>>>> 4cd3cc6639b2aa769e22b637ff127ddd43132903
     "Bwd IAT Mean",
     "Flow Bytes/s",
     "Flow Packets/s",
@@ -39,5 +44,19 @@
     "PSH Flag Count",
     "Bwd Packet Length Min",
     "Bwd IAT Std"
+<<<<<<< HEAD
   ]
+=======
+  ],
+  "best_params": {
+    "learning_rate": 0.1,
+    "max_depth": 3,
+    "n_estimators": 100,
+    "subsample": 0.8
+  },
+  "metrics": {
+    "roc_auc": 0.9999999999999999,
+    "f1_score": 0.9998496466696737
+  }
+>>>>>>> 4cd3cc6639b2aa769e22b637ff127ddd43132903
 }
