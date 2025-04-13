@@ -4,6 +4,7 @@ from code.pip.pipeline_manager import PipelineManager
 from code.pip.label_encoding_step import LabelEncodingStep
 from code.pip.onehot_encoding_step import OneHotEncodingStep
 from code.pip.hybrid_encoding_step import HybridEncodingStep
+from code.pip.standard_scaler_step import StandardScalerStep
 
 # Configure logging
 logging.basicConfig(
@@ -22,8 +23,11 @@ def main():
     # label_encoding_step = LabelEncodingStep()
     # pipeline.add_step(label_encoding_step.execute, "Label Encoding")
     # Add Hybrid encoding step
-    hybrid_step = HybridEncodingStep()
-    pipeline.add_step(hybrid_step.execute, "Hybrid Encoding")
+    # hybrid_step = HybridEncodingStep()
+    # pipeline.add_step(hybrid_step.execute, "Hybrid Encoding")
+    # Add StandardScaler step
+    standard_scaler_step = StandardScalerStep()   
+    pipeline.add_step(standard_scaler_step.execute, "Standard Scaling")
     
     # Execute the pipeline
     try:
