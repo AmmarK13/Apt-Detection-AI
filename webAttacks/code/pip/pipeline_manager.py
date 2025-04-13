@@ -1,6 +1,7 @@
 import logging
 from typing import List, Callable
 from pathlib import Path
+from code.pip.hybrid_encoding_step import HybridEncodingStep
 
 # Configure logging
 logging.basicConfig(
@@ -33,6 +34,10 @@ class PipelineManager:
         logger.info("Starting pipeline execution")
         
         try:
+            # Hybrid encoding step (combines label and one-hot encoding)
+            hybrid_encoding_step = HybridEncodingStep(cardinality_threshold=10)
+            hybrid_encoding_step.execute()
+            
             for step_func, step_name in zip(self.steps, self.step_names):
                 logger.info(f"Executing step: {step_name}")
                 step_func()
