@@ -1,0 +1,80 @@
+CWE Flag Count          1
+Fwd Blk Rate Avg        1
+Bwd Blk Rate Avg        1
+Bwd Pkts/b Avg          1
+Bwd Byts/b Avg          1
+Bwd URG Flags           1
+Fwd Pkts/b Avg          1
+Fwd Byts/b Avg          1
+Fwd URG Flags           1
+Bwd PSH Flags           1
+Fwd PSH Flags           2
+RST Flag Cnt            2
+PSH Flag Cnt            2
+ACK Flag Cnt            2
+SYN Flag Cnt            2
+FIN Flag Cnt            2
+ECE Flag Cnt            2
+URG Flag Cnt            2
+Label                   2
+Protocol                3
+Fwd Seg Size Min        7
+Down/Up Ratio           7
+Fwd Act Data Pkts      34
+Pkt Len Min            60
+Fwd Pkt Len Min        62
+Subflow Fwd Pkts       74
+Tot Fwd Pkts           74
+Tot Bwd Pkts           88
+Subflow Bwd Pkts       88
+Fwd Header Len        140
+Bwd Pkt Len Min       178
+Bwd Header Len        198
+Init Fwd Win Byts     205
+Bwd Pkt Len Max       264
+Init Bwd Win Byts     271
+Pkt Len Max           287
+Fwd Pkt Len Max       387
+Active Std            451
+Idle Std              523
+Active Min            597
+Active Mean           606
+Active Max            606
+Subflow Fwd Byts      614
+TotLen Fwd Pkts       614
+Bwd Pkt Len Std       662
+Dst Port              682
+Idle Max              688
+Idle Min              689
+Idle Mean             691
+Fwd Pkt Len Std       751
+Fwd Seg Size Avg      757
+Fwd Pkt Len Mean      757
+TotLen Bwd Pkts       798
+Subflow Bwd Byts      798
+Bwd Seg Size Avg      811
+Bwd Pkt Len Mean      811
+Pkt Len Std          1042
+Pkt Len Var          1049
+Pkt Size Avg         1117
+Pkt Len Mean         1158
+Bwd IAT Min          1341
+Fwd IAT Min          1492
+Flow IAT Min         1661
+Bwd IAT Max          3087
+Bwd IAT Std          3154
+Bwd IAT Tot          3287
+Bwd IAT Mean         3293
+Fwd IAT Std          3442
+Flow IAT Std         3908
+Fwd IAT Max          4183
+Fwd IAT Mean         4229
+Fwd IAT Tot          4231
+Bwd Pkts/s           4660
+Flow IAT Max         4917
+Flow Byts/s          4995
+Flow Duration        5171
+Flow IAT Mean        5260
+Fwd Pkts/s           5276
+Flow Pkts/s          5300
+dtype: int64
