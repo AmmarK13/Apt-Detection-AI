@@ -1,0 +1,9 @@
+ Protocol values          Attakcs    Benign
+0                         0.000000  100.000000
+6                         57.999033   42.000967
+17                        0.000000  100.000000
+
+these are the values that the protocol Column can take and since the values
+are moslty skewed towards 6 this means having 0 and 17 are just meaning less
+and after removing such values we are only left with 6 and since 6 is constant it provides no meaning
+hence Protocol column should be removed

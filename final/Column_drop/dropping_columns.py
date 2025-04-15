@@ -1,7 +1,7 @@
 import pandas as pd
 
 def clean_low_variance_columns(input_path, output_path):
-    # Load dataset
+
     df = pd.read_csv(input_path)
     
     # Identify columns with only one unique value

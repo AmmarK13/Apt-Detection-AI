@@ -20,5 +20,5 @@ def check_binary_column_balance(file_path, max_diff_percent=10):
             print(f"❌ {col} is skewed: {labels[0]} = {val1:.2f}%, {labels[1]} = {val2:.2f}%")
 
 # Example usage
-file_path = r"d:\4th semester\SE\project\Dataset\02-14-2018_balanced.csv"
+file_path = r"d:\4th semester\SE\project\Dataset\cleaned_up_version2.csv"
 check_binary_column_balance(file_path, max_diff_percent=10)  # 55-45 split
