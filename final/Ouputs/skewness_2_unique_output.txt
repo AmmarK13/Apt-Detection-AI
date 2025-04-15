@@ -1,0 +1,28 @@
+⚖️ Checking balance in binary columns...
+
+❌ Fwd PSH Flags is skewed: 0 = 98.01%, 1 = 1.99%
+❌ FIN Flag Cnt is skewed: 0 = 99.63%, 1 = 0.37%
+❌ SYN Flag Cnt is skewed: 0 = 98.01%, 1 = 1.99%
+❌ RST Flag Cnt is skewed: 0 = 96.67%, 1 = 3.33%
+❌ PSH Flag Cnt is skewed: 1 = 57.04%, 0 = 42.96%
+❌ ACK Flag Cnt is skewed: 0 = 74.48%, 1 = 25.52%
+❌ URG Flag Cnt is skewed: 0 = 85.51%, 1 = 14.49%
+❌ ECE Flag Cnt is skewed: 0 = 96.67%, 1 = 3.33%
+✅ Label is balanced: Benign = 52.00%, Attack = 48.00%
+
+
+Most of the columns that contain 2 unique values are skewed towards zero except PSH Flag Cnt 
+which is almost evenly distributed so no need to remove it however we do need to remove the rest.
+
+
+Dropping the following skewed binary columns:
+ - Fwd PSH Flags
+ - FIN Flag Cnt
+ - SYN Flag Cnt
+ - RST Flag Cnt
+ - PSH Flag Cnt
+ - ACK Flag Cnt
+ - URG Flag Cnt
+ - ECE Flag Cnt
+
+✅ Cleaned dataset saved to: d:\4th semester\SE\project\Dataset\02-14-2018_balanced_removed_cols_free_2skew.csv

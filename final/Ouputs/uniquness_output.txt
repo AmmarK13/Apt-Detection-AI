@@ -78,3 +78,23 @@ Flow IAT Mean        5260
 Fwd Pkts/s           5276
 Flow Pkts/s          5300
 dtype: int64
+
+
+
+Columns that contain only one unique value across all rows do not provide any useful information for analysis or machine learning models. These features are said to have zero variance, meaning they don’t vary at all — every data point has the same value.
+
+❌ Why they are useless:
+No discriminatory power: Since the value never changes, the model can't learn anything from it to distinguish between classes or make predictions.
+
+Increases noise and computation: Keeping such columns unnecessarily increases the dataset size and may slightly affect model performance and training time.
+
+Misleads feature importance: Some algorithms might assign weight or importance to them even though they contribute nothing meaningful.
+
+✅ Action:
+Drop all columns with only one unique value before training your model or performing any analysis. This helps in:
+
+Reducing dimensionality
+
+Cleaning the data
+
+Improving model efficiency and interpretability

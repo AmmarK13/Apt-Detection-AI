@@ -27,4 +27,4 @@ print(balanced_df['Label'].value_counts(normalize=True) * 100)
 print(f"\nTotal rows: {len(balanced_df)}")
 
 # Optionally save
-# balanced_df.to_csv('balanced_dataset.csv', index=False)
+balanced_df.to_csv('balanced_dataset.csv', index=False)
