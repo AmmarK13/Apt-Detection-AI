@@ -195,12 +195,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2. labeling.md",
+                "file": "Failed Attempt (2)/4.data leakage.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2. labeling"
+              "title": "4.data leakage"
             }
           },
           {
@@ -365,8 +365,13 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "7569ec1bc17233f4",
+  "active": "621ac93d6a83dea3",
   "lastOpenFiles": [
+    "Failed Attempt (2)/3.duplicate rows.md",
+    "Failed Attempt (2)/2. labelling.md",
+    "Failed Attempt (2)/1. missing vals.md",
+    "2. labelling.md",
+    "2. labeling.md",
     "Pasted image 20250405071028.png",
     "Pasted image 20250405070459.png",
     "Pasted image 20250405063122.png",
@@ -377,25 +382,19 @@
     "Pasted image 20250331203801.png",
     "Pasted image 20250331191009.png",
     "Pasted image 20250331190936.png",
-    "Pasted image 20250329051314.png",
     "6.feature selection.md",
     "5.outliers.md",
     "4.data leakage.md",
     "3.duplicate rows.md",
     "TO DO LIST.md",
-    "2. labelling.md",
     "1. missing vals.md",
     "1. missing values.md",
-    "2. labeling.md",
-    "Failed Attempt (2)/1. missing vals.md",
     "Failed Attempt (2)/5.outliers.md",
     "Failed Attempt (2)",
     "Failed Attempt (2)/9.model evaluation.md",
     "Failed Attempt (2)/6.feature selection.md",
-    "Failed Attempt (2)/2. labelling.md",
     "Failed Attempt (2)/TO DO LIST.md",
     "Failed Attempt (2)/4.data leakage.md",
-    "Failed Attempt (2)/3.duplicate rows.md",
     "Failed Attempt/1. missing values.md",
     "Failed Attempt/3. labelling.md",
     "Failed Attempt",
