@@ -1,0 +1,32 @@
+PS D:\4th semester\SE\project\Apt-Detection-AI> python -u "d:\4th semester\SE\project\Apt-Detection-AI\final\Feature_uniquness\skewness_checking_multivalue.py"
+🔍 Bwd Pkt Len Min (3 unique values):
+   Value: 0 --> 99.81%
+   Value: 46 --> 0.16%
+   Value: 34 --> 0.03%
+❌ Skewed: Top value dominates with 99.81%
+
+🔍 Fwd Seg Size Min (5 unique values):
+   Value: 20 --> 46.28%
+   Value: 40 --> 26.99%
+   Value: 32 --> 26.65%
+   Value: 28 --> 0.07%
+   Value: 24 --> 0.01%
+✅ Balanced: No single value dominates
+
+🔍 Fwd Pkt Len Min (5 unique values):
+   Value: 0 --> 99.89%
+   Value: 31 --> 0.05%
+   Value: 1 --> 0.03%
+   Value: 38 --> 0.01%
+   Value: 549 --> 0.01%
+🔍 Down/Up Ratio (7 unique values):
+   Value: 1 --> 61.92%
+   Value: 0 --> 37.29%
+   Value: 2 --> 0.64%
+   Value: 3 --> 0.07%
+   Value: 4 --> 0.04%
+   Value: 6 --> 0.03%
+   Value: 11 --> 0.01%
+❌ Skewed: Top value dominates with 61.92%
+
+3 of these features are dominated therefore provide no useful meaning and should be dropped

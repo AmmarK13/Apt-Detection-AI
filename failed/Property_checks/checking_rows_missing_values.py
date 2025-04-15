@@ -20,5 +20,5 @@ def inspect_csv(file_path):
     print("✅ File inspection complete.")
 
 # Example usage
-file_path = r"d:\4th semester\SE\project\Dataset\02-14-2018_balanced_removed_cols_free_2skew.csv"
+file_path = r"d:\4th semester\SE\project\Dataset\balanced_dataset_v2_v3.csv"
 inspect_csv(file_path)
