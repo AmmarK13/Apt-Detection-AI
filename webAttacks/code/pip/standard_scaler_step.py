@@ -10,8 +10,8 @@ logger = logging.getLogger(__name__)
 
 class StandardScalerStep:
     def __init__(self):
-        self.input_path = "D:/University/Software Engineering/Project/data/csic_hybridEncoded.csv"
-        self.output_path = "D:/University/Software Engineering/Project/data/csic_StandardScaledEncoded.csv"
+        self.input_path = "D:/University/Software Engineering/Project/data/csic_reduced_hybridEncoded.csv"
+        self.output_path = "D:/University/Software Engineering/Project/data/csic_reduced_StandardScaledEncoded.csv"
 
     def execute(self):
         """Execute the standard scaling transformation step."""
