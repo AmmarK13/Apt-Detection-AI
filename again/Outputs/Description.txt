@@ -1,0 +1,218 @@
+📄 Preview of the dataset:
+
+   Dst Port  Protocol            Timestamp  Flow Duration  Tot Fwd Pkts  \
+0         0         0  14/02/2018 08:31:01      112641719             3   
+1         0         0  14/02/2018 08:33:50      112641466             3   
+2         0         0  14/02/2018 08:36:39      112638623             3   
+3        22         6  14/02/2018 08:40:13        6453966            15   
+4        22         6  14/02/2018 08:40:23        8804066            14   
+
+   Tot Bwd Pkts  TotLen Fwd Pkts  TotLen Bwd Pkts  Fwd Pkt Len Max  \     
+0             0                0                0                0        
+1             0                0                0                0        
+2             0                0                0                0        
+3            10             1239             2273              744        
+4            11             1143             2209              744        
+
+   Fwd Pkt Len Min  Fwd Pkt Len Mean  Fwd Pkt Len Std  Bwd Pkt Len Max  \ 
+0                0          0.000000         0.000000                0    
+1                0          0.000000         0.000000                0    
+2                0          0.000000         0.000000                0    
+3                0         82.600000       196.741237              976    
+4                0         81.642857       203.745545              976    
+
+   Bwd Pkt Len Min  Bwd Pkt Len Mean  Bwd Pkt Len Std  Flow Byts/s  \     
+0                0          0.000000         0.000000     0.000000        
+1                0          0.000000         0.000000     0.000000        
+2                0          0.000000         0.000000     0.000000        
+3                0        227.300000       371.677892   544.161528        
+4                0        200.818182       362.249864   380.733175
+
+   Flow Pkts/s  Flow IAT Mean   Flow IAT Std  Flow IAT Max  Flow IAT Min  \
+0     0.026633   5.632086e+07     139.300036      56320958      56320761
+1     0.026633   5.632073e+07     114.551299      56320814      56320652
+2     0.026634   5.631931e+07     301.934596      56319525      56319098
+3     3.873587   2.689152e+05  247443.778966        673900            22
+4     2.839597   3.668361e+05  511356.609733       1928102            21
+
+   Fwd IAT Tot  Fwd IAT Mean    Fwd IAT Std  Fwd IAT Max  Fwd IAT Min  \
+0    112641719  5.632086e+07     139.300036     56320958     56320761
+1    112641466  5.632073e+07     114.551299     56320814     56320652
+2    112638623  5.631931e+07     301.934596     56319525     56319098
+3      6453966  4.609976e+05  123109.423588       673900       229740
+4      8804066  6.772358e+05  532416.970959      1928102       246924
+
+   Bwd IAT Tot   Bwd IAT Mean    Bwd IAT Std  Bwd IAT Max  Bwd IAT Min  \
+0            0       0.000000       0.000000            0            0
+1            0       0.000000       0.000000            0            0
+2            0       0.000000       0.000000            0            0
+3      5637902  626433.555556  455082.214224      1167293          554
+4      7715481  771548.100000  755543.082717      2174893           90
+
+   Fwd PSH Flags  Bwd PSH Flags  Fwd URG Flags  Bwd URG Flags  Fwd Header Len  \
+0              0              0              0              0               0
+1              0              0              0              0               0
+2              0              0              0              0               0
+3              0              0              0              0             488
+4              0              0              0              0             456
+
+   Bwd Header Len  Fwd Pkts/s  Bwd Pkts/s  Pkt Len Min  Pkt Len Max  \
+0               0    0.026633    0.000000            0            0
+1               0    0.026633    0.000000            0            0
+2               0    0.026634    0.000000            0            0
+3             328    2.324152    1.549435            0          976
+4             360    1.590174    1.249423            0          976
+
+   Pkt Len Mean  Pkt Len Std   Pkt Len Var  FIN Flag Cnt  SYN Flag Cnt  \
+0      0.000000     0.000000      0.000000             0             0
+1      0.000000     0.000000      0.000000             0             0
+2      0.000000     0.000000      0.000000             0             0
+3    135.076923   277.834760  77192.153846             0             0
+4    128.923077   279.763032  78267.353846             0             0
+
+   RST Flag Cnt  PSH Flag Cnt  ACK Flag Cnt  URG Flag Cnt  CWE Flag Count  \
+0             0             0             0             0               0
+1             0             0             0             0               0
+2             0             0             0             0               0
+3             0             1             0             0               0
+4             0             1             0             0               0
+
+   ECE Flag Cnt  Down/Up Ratio  Pkt Size Avg  Fwd Seg Size Avg  \
+0             0              0          0.00          0.000000
+1             0              0          0.00          0.000000
+2             0              0          0.00          0.000000
+3             0              0        140.48         82.600000
+4             0              0        134.08         81.642857
+
+   Bwd Seg Size Avg  Fwd Byts/b Avg  Fwd Pkts/b Avg  Fwd Blk Rate Avg  \
+0          0.000000               0               0                 0
+1          0.000000               0               0                 0
+2          0.000000               0               0                 0
+3        227.300000               0               0                 0
+4        200.818182               0               0                 0
+
+   Bwd Byts/b Avg  Bwd Pkts/b Avg  Bwd Blk Rate Avg  Subflow Fwd Pkts  \
+0               0               0                 0                 3
+1               0               0                 0                 3
+2               0               0                 0                 3
+3               0               0                 0                15
+4               0               0                 0                14
+
+   Subflow Fwd Byts  Subflow Bwd Pkts  Subflow Bwd Byts  Init Fwd Win Byts  \
+0                 0                 0                 0                 -1
+1                 0                 0                 0                 -1
+2                 0                 0                 0                 -1
+3              1239                10              2273              65535
+4              1143                11              2209               5808
+
+   Init Bwd Win Byts  Fwd Act Data Pkts  Fwd Seg Size Min  Active Mean  \
+0                 -1                  0                 0          0.0
+1                 -1                  0                 0          0.0
+2                 -1                  0                 0          0.0
+3                233                  6                32          0.0
+4                233                  6                32          0.0
+
+   Active Std  Active Max  Active Min   Idle Mean    Idle Std  Idle Max  \
+0         0.0           0           0  56320859.5  139.300036  56320958
+1         0.0           0           0  56320733.0  114.551299  56320814
+2         0.0           0           0  56319311.5  301.934596  56319525
+3         0.0           0           0         0.0    0.000000         0
+4         0.0           0           0         0.0    0.000000         0
+
+   Idle Min   Label
+0  56320761  Benign
+1  56320652  Benign
+2  56319098  Benign
+3         0  Benign
+4         0  Benign
+
+ℹ️ Dataset info:
+
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1044751 entries, 0 to 1044750
+Data columns (total 80 columns):
+ #   Column             Non-Null Count    Dtype
+---  ------             --------------    -----
+ 0   Dst Port           1044751 non-null  int64
+ 1   Protocol           1044751 non-null  int64
+ 2   Timestamp          1044751 non-null  object
+ 3   Flow Duration      1044751 non-null  int64
+ 4   Tot Fwd Pkts       1044751 non-null  int64
+ 5   Tot Bwd Pkts       1044751 non-null  int64
+ 6   TotLen Fwd Pkts    1044751 non-null  int64
+ 7   TotLen Bwd Pkts    1044751 non-null  int64
+ 8   Fwd Pkt Len Max    1044751 non-null  int64
+ 9   Fwd Pkt Len Min    1044751 non-null  int64
+ 10  Fwd Pkt Len Mean   1044751 non-null  float64
+ 11  Fwd Pkt Len Std    1044751 non-null  float64
+ 12  Bwd Pkt Len Max    1044751 non-null  int64
+ 13  Bwd Pkt Len Min    1044751 non-null  int64
+ 14  Bwd Pkt Len Mean   1044751 non-null  float64
+ 15  Bwd Pkt Len Std    1044751 non-null  float64
+ 16  Flow Byts/s        1044751 non-null  float64
+ 17  Flow Pkts/s        1044751 non-null  float64
+ 18  Flow IAT Mean      1044751 non-null  float64
+ 19  Flow IAT Std       1044751 non-null  float64
+ 20  Flow IAT Max       1044751 non-null  int64
+ 21  Flow IAT Min       1044751 non-null  int64
+ 22  Fwd IAT Tot        1044751 non-null  int64
+ 23  Fwd IAT Mean       1044751 non-null  float64
+ 24  Fwd IAT Std        1044751 non-null  float64
+ 25  Fwd IAT Max        1044751 non-null  int64
+ 26  Fwd IAT Min        1044751 non-null  int64
+ 27  Bwd IAT Tot        1044751 non-null  int64
+ 28  Bwd IAT Mean       1044751 non-null  float64
+ 29  Bwd IAT Std        1044751 non-null  float64
+ 30  Bwd IAT Max        1044751 non-null  int64
+ 31  Bwd IAT Min        1044751 non-null  int64
+ 32  Fwd PSH Flags      1044751 non-null  int64
+ 33  Bwd PSH Flags      1044751 non-null  int64
+ 34  Fwd URG Flags      1044751 non-null  int64
+ 35  Bwd URG Flags      1044751 non-null  int64
+ 36  Fwd Header Len     1044751 non-null  int64
+ 37  Bwd Header Len     1044751 non-null  int64
+ 38  Fwd Pkts/s         1044751 non-null  float64
+ 39  Bwd Pkts/s         1044751 non-null  float64
+ 40  Pkt Len Min        1044751 non-null  int64
+ 41  Pkt Len Max        1044751 non-null  int64
+ 42  Pkt Len Mean       1044751 non-null  float64
+ 43  Pkt Len Std        1044751 non-null  float64
+ 44  Pkt Len Var        1044751 non-null  float64
+ 45  FIN Flag Cnt       1044751 non-null  int64
+ 46  SYN Flag Cnt       1044751 non-null  int64
+ 47  RST Flag Cnt       1044751 non-null  int64
+ 48  PSH Flag Cnt       1044751 non-null  int64
+ 49  ACK Flag Cnt       1044751 non-null  int64
+ 50  URG Flag Cnt       1044751 non-null  int64
+ 51  CWE Flag Count     1044751 non-null  int64
+ 52  ECE Flag Cnt       1044751 non-null  int64
+ 53  Down/Up Ratio      1044751 non-null  int64
+ 54  Pkt Size Avg       1044751 non-null  float64
+ 55  Fwd Seg Size Avg   1044751 non-null  float64
+ 56  Bwd Seg Size Avg   1044751 non-null  float64
+ 57  Fwd Byts/b Avg     1044751 non-null  int64
+ 58  Fwd Pkts/b Avg     1044751 non-null  int64
+ 59  Fwd Blk Rate Avg   1044751 non-null  int64
+ 60  Bwd Byts/b Avg     1044751 non-null  int64
+ 61  Bwd Pkts/b Avg     1044751 non-null  int64
+ 62  Bwd Blk Rate Avg   1044751 non-null  int64
+ 63  Subflow Fwd Pkts   1044751 non-null  int64
+ 64  Subflow Fwd Byts   1044751 non-null  int64
+ 65  Subflow Bwd Pkts   1044751 non-null  int64
+ 66  Subflow Bwd Byts   1044751 non-null  int64
+ 67  Init Fwd Win Byts  1044751 non-null  int64
+ 68  Init Bwd Win Byts  1044751 non-null  int64
+ 69  Fwd Act Data Pkts  1044751 non-null  int64
+ 70  Fwd Seg Size Min   1044751 non-null  int64
+ 71  Active Mean        1044751 non-null  float64
+ 72  Active Std         1044751 non-null  float64
+ 73  Active Max         1044751 non-null  int64
+ 74  Active Min         1044751 non-null  int64
+ 75  Idle Mean          1044751 non-null  float64
+ 76  Idle Std           1044751 non-null  float64
+ 77  Idle Max           1044751 non-null  int64
+ 78  Idle Min           1044751 non-null  int64
+ 79  Label              1044751 non-null  object
+dtypes: float64(24), int64(54), object(2)
+
+
