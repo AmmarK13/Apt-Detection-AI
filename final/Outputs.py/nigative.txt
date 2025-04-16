@@ -1,0 +1,16 @@
+Columns with negative values and their respective counts:
+Flow Duration: 5 negative values
+Flow Pkts/s: 5 negative values
+Flow IAT Mean: 5 negative values
+Flow IAT Max: 2 negative values
+Flow IAT Min: 5 negative values
+Fwd IAT Tot: 5 negative values
+Fwd IAT Mean: 5 negative values
+Fwd IAT Max: 2 negative values
+Fwd IAT Min: 5 negative values
+Init Fwd Win Byts: 129846 negative values
+Init Bwd Win Byts: 210067 negative values
+Time_Diff: 2 negative values
+
+Cols with Negative values fewer then 5 are replaced with 0 and for 
+those in 10000s correlation bw them and Label col will decide whether we drop them or not
