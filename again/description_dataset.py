@@ -12,4 +12,4 @@ print(df.head())
 
 # Display dataset info
 print("\nℹ️ Dataset info:\n")
-print(df.info())
+(df.info())
