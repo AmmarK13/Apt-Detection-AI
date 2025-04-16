@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 
 # Load your dataset
-file_path = r"C:\Users\user\.cache\kagglehub\datasets\ogguy11\apt-detection\versions\1\02-14-2018.csv"
+file_path = r"D:\4th semester\SE\project\Dataset\filtered_dataset_no_nan.csv"
 df = pd.read_csv(file_path)
 
 # Select only numeric columns to avoid TypeError
