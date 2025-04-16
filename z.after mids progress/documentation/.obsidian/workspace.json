@@ -195,12 +195,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "3. Scaling.md",
+                "file": "4. Range after scaling.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "3. Scaling"
+              "title": "4. Range after scaling"
             }
           },
           {
@@ -369,6 +369,7 @@
   "lastOpenFiles": [
     "2. Scaling check.md",
     "3. Scaling.md",
+    "4. Range after scaling.md",
     "1. low var and unique val check.md",
     "1. missing values.md",
     "images/Pasted image 20250329035819.png",
@@ -405,7 +406,6 @@
     "Failed Attempt",
     "Failed Attempt/5. outliers.md",
     "Failed Attempt/4. data leakage.md",
-    "Failed Attempt/3. data Leakage --failed--.md",
-    "Failed Attempt/2. duplicates values.md"
+    "Failed Attempt/3. data Leakage --failed--.md"
   ]
 }

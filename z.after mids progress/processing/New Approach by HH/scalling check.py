@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 
 # === Load your dataset ===
-df = pd.read_csv("dataset_after_low_variance_removed.csv")  # change to your path
+df = pd.read_csv("dataset_scaled.csv")  # change to your path
 
 # === Select numeric columns (exclude Label if needed) ===
 numeric_cols = df.select_dtypes(include=np.number).columns
