@@ -216,3 +216,9 @@ Data columns (total 80 columns):
 dtypes: float64(24), int64(54), object(2)
 
 
+Label
+Benign            663808
+FTP-BruteForce    193354
+SSH-Bruteforce    187589
+Name: count, dtype: int64
+
