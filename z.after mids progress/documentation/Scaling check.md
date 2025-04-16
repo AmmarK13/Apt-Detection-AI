@@ -1,0 +1,75 @@
+```python
+python3 scalling\ check.py 
+
+🔎 Checking min-max range of 65 numeric features:
+
+Destination Port               ➜ Min: 0.00 | Max: 65532.00 | Range: 65532.00
+Flow Duration                  ➜ Min: -1.00 | Max: 119999937.00 | Range: 119999938.00
+Total Fwd Packets              ➜ Min: 1.00 | Max: 1932.00 | Range: 1931.00
+Total Backward Packets         ➜ Min: 0.00 | Max: 2942.00 | Range: 2942.00
+Total Length of Fwd Packets    ➜ Min: 0.00 | Max: 183012.00 | Range: 183012.00
+Total Length of Bwd Packets    ➜ Min: 0.00 | Max: 5172346.00 | Range: 5172346.00
+Fwd Packet Length Max          ➜ Min: 0.00 | Max: 11680.00 | Range: 11680.00
+Fwd Packet Length Min          ➜ Min: 0.00 | Max: 1472.00 | Range: 1472.00
+Fwd Packet Length Mean         ➜ Min: 0.00 | Max: 3867.00 | Range: 3867.00
+Fwd Packet Length Std          ➜ Min: 0.00 | Max: 6692.64 | Range: 6692.64
+Bwd Packet Length Max          ➜ Min: 0.00 | Max: 11680.00 | Range: 11680.00
+Bwd Packet Length Min          ➜ Min: 0.00 | Max: 1460.00 | Range: 1460.00
+Bwd Packet Length Mean         ➜ Min: 0.00 | Max: 5800.50 | Range: 5800.50
+Bwd Packet Length Std          ➜ Min: 0.00 | Max: 8194.66 | Range: 8194.66
+Flow Bytes/s                   ➜ Min: -12000000.00 | Max: inf | Range: inf
+Flow Packets/s                 ➜ Min: -2000000.00 | Max: inf | Range: inf
+Flow IAT Mean                  ➜ Min: -1.00 | Max: 107000000.00 | Range: 107000001.00
+Flow IAT Std                   ➜ Min: 0.00 | Max: 69200000.00 | Range: 69200000.00
+Flow IAT Max                   ➜ Min: -1.00 | Max: 120000000.00 | Range: 120000001.00
+Flow IAT Min                   ➜ Min: -12.00 | Max: 107000000.00 | Range: 107000012.00
+Fwd IAT Total                  ➜ Min: 0.00 | Max: 120000000.00 | Range: 120000000.00
+Fwd IAT Mean                   ➜ Min: 0.00 | Max: 120000000.00 | Range: 120000000.00
+Fwd IAT Std                    ➜ Min: 0.00 | Max: 76700000.00 | Range: 76700000.00
+Fwd IAT Max                    ➜ Min: 0.00 | Max: 120000000.00 | Range: 120000000.00
+Fwd IAT Min                    ➜ Min: -12.00 | Max: 120000000.00 | Range: 120000012.00
+Bwd IAT Total                  ➜ Min: 0.00 | Max: 120000000.00 | Range: 120000000.00
+Bwd IAT Mean                   ➜ Min: 0.00 | Max: 120000000.00 | Range: 120000000.00
+Bwd IAT Std                    ➜ Min: 0.00 | Max: 76700000.00 | Range: 76700000.00
+Bwd IAT Max                    ➜ Min: 0.00 | Max: 120000000.00 | Range: 120000000.00
+Bwd IAT Min                    ➜ Min: 0.00 | Max: 120000000.00 | Range: 120000000.00
+Fwd PSH Flags                  ➜ Min: 0.00 | Max: 1.00 | Range: 1.00
+Fwd Header Length              ➜ Min: 0.00 | Max: 39396.00 | Range: 39396.00
+Bwd Header Length              ➜ Min: 0.00 | Max: 58852.00 | Range: 58852.00
+Fwd Packets/s                  ➜ Min: 0.00 | Max: 3000000.00 | Range: 3000000.00
+Bwd Packets/s                  ➜ Min: 0.00 | Max: 2000000.00 | Range: 2000000.00
+Min Packet Length              ➜ Min: 0.00 | Max: 337.00 | Range: 337.00
+Max Packet Length              ➜ Min: 0.00 | Max: 11680.00 | Range: 11680.00
+Packet Length Mean             ➜ Min: 0.00 | Max: 1936.83 | Range: 1936.83
+Packet Length Std              ➜ Min: 0.00 | Max: 4731.52 | Range: 4731.52
+Packet Length Variance         ➜ Min: 0.00 | Max: 22400000.00 | Range: 22400000.00
+SYN Flag Count                 ➜ Min: 0.00 | Max: 1.00 | Range: 1.00
+PSH Flag Count                 ➜ Min: 0.00 | Max: 1.00 | Range: 1.00
+ACK Flag Count                 ➜ Min: 0.00 | Max: 1.00 | Range: 1.00
+URG Flag Count                 ➜ Min: 0.00 | Max: 1.00 | Range: 1.00
+Down/Up Ratio                  ➜ Min: 0.00 | Max: 7.00 | Range: 7.00
+Average Packet Size            ➜ Min: 0.00 | Max: 2528.00 | Range: 2528.00
+Avg Fwd Segment Size           ➜ Min: 0.00 | Max: 3867.00 | Range: 3867.00
+Avg Bwd Segment Size           ➜ Min: 0.00 | Max: 5800.50 | Range: 5800.50
+Fwd Header Length.1            ➜ Min: 0.00 | Max: 39396.00 | Range: 39396.00
+Subflow Fwd Packets            ➜ Min: 1.00 | Max: 1932.00 | Range: 1931.00
+Subflow Fwd Bytes              ➜ Min: 0.00 | Max: 183012.00 | Range: 183012.00
+Subflow Bwd Packets            ➜ Min: 0.00 | Max: 2942.00 | Range: 2942.00
+Subflow Bwd Bytes              ➜ Min: 0.00 | Max: 5172346.00 | Range: 5172346.00
+Init_Win_bytes_forward         ➜ Min: -1.00 | Max: 65535.00 | Range: 65536.00
+Init_Win_bytes_backward        ➜ Min: -1.00 | Max: 65535.00 | Range: 65536.00
+act_data_pkt_fwd               ➜ Min: 0.00 | Max: 1931.00 | Range: 1931.00
+min_seg_size_forward           ➜ Min: 0.00 | Max: 52.00 | Range: 52.00
+Active Mean                    ➜ Min: 0.00 | Max: 100000000.00 | Range: 100000000.00
+Active Std                     ➜ Min: 0.00 | Max: 39500000.00 | Range: 39500000.00
+Active Max                     ➜ Min: 0.00 | Max: 100000000.00 | Range: 100000000.00
+Active Min                     ➜ Min: 0.00 | Max: 100000000.00 | Range: 100000000.00
+Idle Mean                      ➜ Min: 0.00 | Max: 120000000.00 | Range: 120000000.00
+Idle Std                       ➜ Min: 0.00 | Max: 65300000.00 | Range: 65300000.00
+Idle Max                       ➜ Min: 0.00 | Max: 120000000.00 | Range: 120000000.00
+Idle Min                       ➜ Min: 0.00 | Max: 120000000.00 | Range: 120000000.00
+
+📊 Verdict:
+⚠️ Scaling is likely NEEDED due to large value ranges in some features.
+(myenv)
+```

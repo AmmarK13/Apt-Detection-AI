@@ -193,12 +193,14 @@
             "id": "621ac93d6a83dea3",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "Pasted image 20250329035819.png"
+                "file": "Scaling check.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "Pasted image 20250329035819"
+              "icon": "lucide-file",
+              "title": "Scaling check"
             }
           },
           {
@@ -273,7 +275,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "8795127f52996959",
@@ -365,6 +368,9 @@
   },
   "active": "621ac93d6a83dea3",
   "lastOpenFiles": [
+    "low var and unique val check.md",
+    "Scaling check.md",
+    "Pasted image 20250329035819.png",
     "Failed Attempt (3)/2. labelling.md",
     "Failed Attempt (3)/1. missing vals.md",
     "1. missing values.md",
@@ -383,7 +389,6 @@
     "Pasted image 20250331203810.png",
     "Pasted image 20250331203801.png",
     "Pasted image 20250331191009.png",
-    "Pasted image 20250331190936.png",
     "Failed Attempt (3)/6.feature selection.md",
     "Failed Attempt (3)/5.outliers.md",
     "Failed Attempt (3)/4.data leakage.md",
