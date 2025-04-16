@@ -1,0 +1,15 @@
+Label Distribution (Counts):
+ Label
+Benign            665355
+FTP-BruteForce    193354
+SSH-Bruteforce    187589
+Name: count, dtype: int64
+
+Label Distribution (Percentages):
+ Label
+Benign            63.59
+FTP-BruteForce    18.48
+SSH-Bruteforce    17.93
+
+
+Since my dataset is Skewed towards Benign and Attacks are roughly 35% and 63% so i need to balance my Dataset
