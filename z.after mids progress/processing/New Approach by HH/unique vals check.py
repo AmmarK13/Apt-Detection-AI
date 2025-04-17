@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 
 # === Load your dataset ===
-df = pd.read_csv("Friday-WorkingHours-Afternoon-DDos.pcap_ISCX_CLEANED_BALANCED_CLEAN.csv")
+df = pd.read_csv("dataset_balanced.csv")
 
 # === Select numeric columns ===
 numeric_cols = df.select_dtypes(include=np.number).columns

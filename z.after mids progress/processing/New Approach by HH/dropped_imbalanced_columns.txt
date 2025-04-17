@@ -1,0 +1,6 @@
+Fwd PSH Flags
+SYN Flag Count
+PSH Flag Count
+URG Flag Count
+Down/Up Ratio
+min_seg_size_forward
