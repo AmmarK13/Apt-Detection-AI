@@ -1,8 +1,6 @@
 import logging
 from pathlib import Path
 from code.pip.pipeline_manager import PipelineManager
-from code.pip.label_encoding_step import LabelEncodingStep
-from code.pip.onehot_encoding_step import OneHotEncodingStep
 from code.pip.hybrid_encoding_step import HybridEncodingStep
 from code.pip.minmax_scaler_step import MinMaxScalerStep
 

@@ -3,6 +3,7 @@ import numpy as np
 import logging
 from pathlib import Path
 from sklearn.preprocessing import LabelEncoder, OneHotEncoder
+from .encoding_validator import EncodingValidator
 
 # Configure logging
 logging.basicConfig(
@@ -23,6 +24,7 @@ class HybridEncodingTransformer:
         self.cardinality_threshold = cardinality_threshold
         self.label_encoder = {}
         self.onehot_encoder = OneHotEncoder(sparse_output=False, handle_unknown='ignore')
+        self.validator = EncodingValidator()
         
     def _get_cardinality(self, column):
         """Get the cardinality (number of unique values) of a column."""
@@ -62,10 +64,15 @@ class HybridEncodingTransformer:
             logger.info(f"High cardinality columns: {high_cardinality}")
             logger.info(f"Low cardinality columns: {low_cardinality}")
 
-            # Apply Label Encoding to high cardinality columns
+            # Apply Label Encoding to high cardinality columns and validate
+            original_df = df.copy()
             for col in high_cardinality:
                 self.label_encoder[col] = LabelEncoder()
                 df[col] = self.label_encoder[col].fit_transform(df[col])
+                
+                # Validate unique mapping
+                if not self.validator.validate_unique_mapping(original_df, df, col):
+                    raise ValueError(f"Non-unique mapping detected for column: {col}")
 
             # Apply One-Hot Encoding to low cardinality columns
             if low_cardinality:
