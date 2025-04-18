@@ -39,8 +39,21 @@ class HybridEncodingTransformer:
         try:
             # Read the input data
             df = pd.read_csv(self.input_path)
+            
+            # Add URL analysis
+            if 'url' in df.columns:
+                url_lengths = df['url'].str.len()
+                logger.info(f"URL Statistics:")
+                logger.info(f"Max Length: {url_lengths.max()}")
+                logger.info(f"Min Length: {url_lengths.min()}")
+                logger.info(f"Mean Length: {url_lengths.mean():.2f}")
+                logger.info(f"Unique URLs: {len(df['url'].unique())}")
+
             logger.info(f"Loaded data from {self.input_path}")
 
+            # Handle NaN values before encoding
+            df = df.fillna('unknown')  # Replace NaN with 'unknown'
+            
             # Identify categorical columns (object dtype)
             categorical_columns = df.select_dtypes(include=['object']).columns
             logger.info(f"Identified categorical columns: {categorical_columns.tolist()}")

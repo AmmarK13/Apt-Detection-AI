@@ -1,6 +1,7 @@
 import logging
 from pathlib import Path
 from code.pip.pipeline_manager import PipelineManager
+from code.pip.data_cleaning_step import DataCleaningStep
 from code.pip.hybrid_encoding_step import HybridEncodingStep
 from code.pip.minmax_scaler_step import MinMaxScalerStep
 
@@ -14,17 +15,15 @@ logger = logging.getLogger(__name__)
 def main():
     # Initialize the pipeline manager
     pipeline = PipelineManager()
+    
+    # Add Data Cleaning step
+    cleaning_step = DataCleaningStep()
+    pipeline.add_step(cleaning_step.execute, "Data Cleaning")
+    
     # Add Hybrid encoding step
-    # Hybrid Encoding combines both Label and OneHot encoding techniques
-    # For cookies: Uses Label encoding for categorical values and patterns
-    #   - Encodes common cookie patterns (e.g., session IDs, authentication tokens)
-    #   - Converts cookie values into numerical representations
-    # For URLs: Uses OneHot encoding for critical components
-    #   - Encodes URL paths, query parameters, and special characters
-    #   - Creates binary features for common attack patterns
-    #   - Preserves URL structure while converting to machine-readable format
     hybrid_step = HybridEncodingStep()
     pipeline.add_step(hybrid_step.execute, "Hybrid Encoding")
+    
     # Add MinMaxScaler step
     minmax_scaler_step = MinMaxScalerStep()   
     pipeline.add_step(minmax_scaler_step.execute, "MinMax Scaling")
@@ -39,19 +38,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-
-
-
-
-
-
-
-
-    # Add OneHot encoding step
-    # onehot_step = OneHotEncodingStep()
-    # pipeline.add_step(onehot_step.execute, "OneHot Encoding")
-    # # Add processing steps in the desired order
-    # label_encoding_step = LabelEncodingStep()
-    # pipeline.add_step(label_encoding_step.execute, "Label Encoding")

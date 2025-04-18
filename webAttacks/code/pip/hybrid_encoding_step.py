@@ -16,7 +16,7 @@ class HybridEncodingStep:
         Args:
             cardinality_threshold (int): Threshold for determining high vs low cardinality
         """
-        self.input_path = "data/csic_database.csv"
+        self.input_path = "data/csic_cleaned.csv"
         self.output_path = "data/csic_reduced_hybridEncoded.csv"
         self.cardinality_threshold = cardinality_threshold
 
