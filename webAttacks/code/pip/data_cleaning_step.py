@@ -1,7 +1,7 @@
 import pandas as pd
 import logging
 from pathlib import Path
-from ..csic_cleaned import clean_csic_dataset
+from code.cleaning.csic_cleaned import clean_csic_dataset
 
 logger = logging.getLogger(__name__)
 
