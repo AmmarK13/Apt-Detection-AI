@@ -4,6 +4,7 @@ from code.pip.pipeline_manager import PipelineManager
 from code.pip.data_cleaning_step import DataCleaningStep
 from code.pip.hybrid_encoding_step import HybridEncodingStep
 from code.pip.minmax_scaler_step import MinMaxScalerStep
+from code.pip.model_step import ModelStep
 
 # Configure logging
 logging.basicConfig(
@@ -27,6 +28,10 @@ def main():
     # Add MinMaxScaler step
     minmax_scaler_step = MinMaxScalerStep()   
     pipeline.add_step(minmax_scaler_step.execute, "MinMax Scaling")
+    
+    # Add Model evaluation step
+    model_step = ModelStep()
+    pipeline.add_step(model_step.execute, "Model Evaluation")
     
     # Execute the pipeline
     try:
