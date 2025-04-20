@@ -67,4 +67,4 @@ def test_model(new_data_path, has_labels=True):
 # Example usage:
 if __name__ == "__main__":
     # For data WITH labels:
-    test_model("D:/University/Software Engineering/Project/data/csic_reduced_minmaxScaled.csv")
+    test_model("D:/University/Software Engineering/Project/data/minmaxScaled.csv")

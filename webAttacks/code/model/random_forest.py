@@ -121,4 +121,4 @@ def predict_attack(input_csv_path, output_csv_path="D:/University/Software Engin
 
 # Example: Predict on a new CSV file
 if __name__ == "__main__":
-    predict_attack("D:/University/Software Engineering/Project/data/csic_reduced_minmaxScaled.csv")  # Replace with your input CSV path
+    predict_attack("D:/University/Software Engineering/Project/data/minmaxScaled.csv")  # Replace with your input CSV path

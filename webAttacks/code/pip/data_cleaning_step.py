@@ -8,7 +8,7 @@ logger = logging.getLogger(__name__)
 class DataCleaningStep:
     def __init__(self):
         self.input_path = "D:/University/Software Engineering/Project/Apt-Detection-AI/webAttacks/data/csic_database.csv"
-        self.output_path = "D:/University/Software Engineering/Project/Apt-Detection-AI/webAttacks/data/csic_cleaned.csv"
+        self.output_path = "D:/University/Software Engineering/Project/data/csic_cleaned.csv"
 
     def execute(self):
         try:
