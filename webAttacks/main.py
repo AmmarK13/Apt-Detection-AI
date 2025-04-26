@@ -1,72 +1,45 @@
 import logging
-import os
-from src.cleaning.clean_data import DataCleaner
-from src.features.build_features import FeatureBuilder
-from src.models.train_model import WebAttackModel
+from pathlib import Path
+from code.pip.pipeline_manager import PipelineManager
+from code.pip.data_cleaning_step import DataCleaningStep
+from code.pip.hybrid_encoding_step import HybridEncodingStep
+from code.pip.minmax_scaler_step import MinMaxScalerStep
+from code.pip.model_step import ModelStep
 
 # Configure logging
-logging.basicConfig(level=logging.INFO)
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
 logger = logging.getLogger(__name__)
 
-class WebAttackPipeline:
-    def __init__(self):
-        self.data_dir = 'data'
-        self.raw_data = os.path.join(self.data_dir, 'csic_database.csv')
-        self.processed_data = os.path.join(self.data_dir, 'processed', 'cleaned_dataset.csv')
-        self.feature_data = os.path.join(self.data_dir, 'features', 'engineered_features.csv')
-        self.model_dir = os.path.join('src', 'models')
-
-    def run_cleaning_pipeline(self):
-        logger.info('Starting data cleaning pipeline...')
-        try:
-            cleaner = DataCleaner(self.raw_data, self.processed_data)
-            cleaner.clean_data()
-            logger.info('Data cleaning completed successfully')
-        except Exception as e:
-            logger.error(f'Error in cleaning pipeline: {e}')
-            raise
-
-    def run_feature_engineering(self):
-        logger.info('Starting feature engineering pipeline...')
-        try:
-            feature_builder = FeatureBuilder(self.processed_data, os.path.join(self.data_dir, 'features'))
-            feature_builder.build_features()
-            logger.info('Feature engineering completed successfully')
-        except Exception as e:
-            logger.error(f'Error in feature engineering pipeline: {e}')
-            raise
-
-    def run_model_training(self):
-        logger.info('Starting model training pipeline...')
-        try:
-            model = WebAttackModel(self.feature_data, self.model_dir)
-            model.load_data()
-            model.prepare_data()
-            model.build_model()
-            model.train_model()
-            model.evaluate_model()
-            logger.info('Model training completed successfully')
-        except Exception as e:
-            logger.error(f'Error in model training pipeline: {e}')
-            raise
-
-    def run_full_pipeline(self):
-        try:
-            logger.info('Starting full web attack detection pipeline...')
-            self.run_cleaning_pipeline()
-            self.run_feature_engineering()
-            self.run_model_training()
-            logger.info('Full pipeline completed successfully')
-        except Exception as e:
-            logger.error(f'Pipeline failed: {e}')
-            raise
-
 def main():
-    pipeline = WebAttackPipeline()
+    # Initialize the pipeline manager
+    pipeline = PipelineManager()
+    
+    # Add Data Cleaning step
+    cleaning_step = DataCleaningStep()
+    pipeline.add_step(cleaning_step.execute, "Data Cleaning")
+    
+    # Add Hybrid encoding step
+    hybrid_step = HybridEncodingStep()
+    pipeline.add_step(hybrid_step.execute, "Hybrid Encoding")
+    
+    # Add MinMaxScaler step
+    minmax_scaler_step = MinMaxScalerStep()   
+    pipeline.add_step(minmax_scaler_step.execute, "MinMax Scaling")
+    
+    # Add Model evaluation step
+    model_step = ModelStep()
+    pipeline.add_step(model_step.execute, "Model Evaluation")
+    
+    # Execute the pipeline
     try:
-        pipeline.run_full_pipeline()
+        pipeline.run()
+        logger.info("Data processing pipeline completed successfully")
     except Exception as e:
-        logger.error(f'Pipeline execution failed: {e}')
+        logger.error(f"Error in pipeline execution: {e}")
+        raise
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
