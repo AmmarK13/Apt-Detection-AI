@@ -16,8 +16,8 @@ class HybridEncodingStep:
         Args:
             cardinality_threshold (int): Threshold for determining high vs low cardinality
         """
-        self.input_path = "D:/University/Software Engineering/Project/data/csic_cleaned.csv"
-        self.output_path = "D:/University/Software Engineering/Project/data/hybridEncoded.csv"
+        self.input_path = "D:/University/Software Engineering/Project/Output/transformed.csv"
+        self.output_path = "D:/University/Software Engineering/Project/Output/encoded.csv"
         self.cardinality_threshold = cardinality_threshold
 
     def execute(self):

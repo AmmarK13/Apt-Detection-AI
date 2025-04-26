@@ -12,8 +12,8 @@ logger = logging.getLogger(__name__)
 class MinMaxScalerStep:
     def __init__(self):
         """Initialize the MinMax scaling step."""
-        self.input_path = "D:/University/Software Engineering/Project/data/hybridEncoded.csv"
-        self.output_path = "D:/University/Software Engineering/Project/data/minmaxScaled.csv"
+        self.input_path = "D:/University/Software Engineering/Project/Output/transformed.csv"
+        self.output_path = "D:/University/Software Engineering/Project/Output/scaled.csv"
 
     def execute(self):
         """Execute the MinMax scaling transformation step."""

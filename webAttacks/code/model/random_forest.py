@@ -58,7 +58,7 @@ def train_random_forest_model(input_csv_path):
     
     return model, feature_columns
 
-def predict_attack(input_csv_path, output_csv_path="D:/University/Software Engineering/Project/data/predictions.csv"):
+def predict_attack(input_csv_path, output_csv_path="D:/University/Software Engineering/Project/Output/predictions.csv"):
     
     print(f"Running attack prediction on {input_csv_path}")
     
@@ -121,4 +121,4 @@ def predict_attack(input_csv_path, output_csv_path="D:/University/Software Engin
 
 # Example: Predict on a new CSV file
 if __name__ == "__main__":
-    predict_attack("D:/University/Software Engineering/Project/data/minmaxScaled.csv")  # Replace with your input CSV path
+    predict_attack("D:/University/Software Engineering/Project/Output/scaled.csv")  # Replace with your input CSV path

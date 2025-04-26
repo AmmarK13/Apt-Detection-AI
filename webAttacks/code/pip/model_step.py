@@ -12,7 +12,7 @@ logger = logging.getLogger(__name__)
 class ModelStep:
     def __init__(self):
         """Initialize the Model evaluation step."""
-        self.input_path = "D:/University/Software Engineering/Project/data/minmaxScaled.csv"
+        self.input_path = "D:/University/Software Engineering/Project/Output/scaled.csv"  # Changed from transformed.csv to scaled.csv
         self.has_labels = True  # Set to False if your data doesn't have 'classification' column
 
     def execute(self):

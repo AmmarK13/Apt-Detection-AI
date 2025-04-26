@@ -5,6 +5,7 @@ from code.pip.data_cleaning_step import DataCleaningStep
 from code.pip.hybrid_encoding_step import HybridEncodingStep
 from code.pip.minmax_scaler_step import MinMaxScalerStep
 from code.pip.model_step import ModelStep
+from code.pip.data_transformer_step import DataTransformerStep
 
 # Configure logging
 logging.basicConfig(
@@ -18,8 +19,12 @@ def main():
     pipeline = PipelineManager()
     
     # Add Data Cleaning step
-    cleaning_step = DataCleaningStep()
+    cleaning_step = DataCleaningStep(input_path="D:/University/Software Engineering/Project/Output/generated_dataset.csv")
     pipeline.add_step(cleaning_step.execute, "Data Cleaning")
+    
+    # Add Data Transformer step
+    transformer_step = DataTransformerStep()
+    pipeline.add_step(transformer_step.execute, "Data Transformation")
     
     # Add Hybrid encoding step
     hybrid_step = HybridEncodingStep()
