@@ -167,12 +167,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "12.data_transform.py.md",
+                "file": "SQA PLAN.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "12.data_transform.py"
+              "title": "SQA PLAN"
             }
           }
         ],
@@ -233,7 +233,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 231.5
   },
   "right": {
     "id": "86a06872c5c2f23d",
@@ -323,10 +323,12 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "db80a9c37cc420e9",
+  "active": "8d1a7fec832d828d",
   "lastOpenFiles": [
-    "checked on train_vals.csv and test.csv.md",
+    "Documentation.md",
+    "SQA PLAN.md",
     "12.data_transform.py.md",
+    "checked on train_vals.csv and test.csv.md",
     "11. testing.md",
     "10. training model.md",
     "9. splitting data.md",

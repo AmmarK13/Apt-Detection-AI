@@ -30,7 +30,7 @@ model_features = [
 reference_data = pd.read_csv('train_val.csv')
 
 # Load new test data
-test_data = pd.read_csv('test.csv')
+test_data = pd.read_csv('train_val3.csv')
 
 # Handle labels first
 if 'Label' in test_data.columns:
