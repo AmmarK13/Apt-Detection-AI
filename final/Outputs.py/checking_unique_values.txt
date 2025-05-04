@@ -1,0 +1,89 @@
+Flow Byts/s          321733
+Flow IAT Mean        301935
+Flow Pkts/s          300752
+Flow IAT Std         298915
+Fwd Pkts/s           295425
+Flow Duration        276899
+Fwd IAT Mean         269533
+Bwd Pkts/s           257983
+Fwd IAT Std          252216
+Fwd IAT Tot          250350
+Bwd IAT Std          245661
+Fwd IAT Max          225403
+Bwd IAT Mean         222476
+Flow IAT Max         220163
+Bwd IAT Tot          208232
+Bwd IAT Max          164927
+Bwd IAT Min           75869
+Fwd IAT Min           62986
+Idle Mean             48543
+Flow IAT Min          48388
+Active Mean           43288
+Idle Min              43158
+Active Max            42498
+Idle Max              37979
+Idle Std              34029
+Active Std            32168
+Time_Seconds          28904
+Pkt Len Var           27464
+Pkt Len Std           27362
+Active Min            25714
+Pkt Len Mean          24031
+Pkt Size Avg          23722
+Bwd Pkt Len Std       18944
+Fwd Pkt Len Std       18258
+Bwd Pkt Len Mean      16631
+Bwd Seg Size Avg      16630
+Dst Port              14930
+Fwd Pkt Len Mean      12852
+Fwd Seg Size Avg      12852
+TotLen Bwd Pkts       11154
+Subflow Bwd Byts      11154
+Subflow Fwd Byts       4661
+TotLen Fwd Pkts        4661
+Init Bwd Win Byts      2600
+Init Fwd Win Byts      2430
+Bwd Header Len         1421
+Fwd Pkt Len Max        1325
+Pkt Len Max             981
+Fwd Header Len          977
+Bwd Pkt Len Max         821
+Tot Bwd Pkts            774
+Subflow Bwd Pkts        774
+Subflow Fwd Pkts        590
+Tot Fwd Pkts            590
+Bwd Pkt Len Min         262
+Fwd Pkt Len Min          95
+Fwd Act Data Pkts        95
+Pkt Len Min              76
+Minute                   60
+Second                   60
+Down/Up Ratio            33
+Time_Diff                13
+Hour                     11
+Fwd Seg Size Min         10
+Protocol                  3
+RST Flag Cnt              2
+SYN Flag Cnt              2
+FIN Flag Cnt              2
+Fwd PSH Flags             2
+Label                     2
+URG Flag Cnt              2
+ACK Flag Cnt              2
+PSH Flag Cnt              2
+ECE Flag Cnt              2
+Fwd URG Flags             1
+Bwd URG Flags             1
+CWE Flag Count            1
+Bwd PSH Flags             1
+Bwd Blk Rate Avg          1
+Bwd Pkts/b Avg            1
+Fwd Byts/b Avg            1
+Fwd Pkts/b Avg            1
+Fwd Blk Rate Avg          1
+Bwd Byts/b Avg            1
+
+
+Now columns with no unique values such as BWD Bytes etc 
+cols that have a corresponding 1 next to them do not contribute anything to the learning process
+so we remove them

@@ -1,0 +1,82 @@
+Missing Values Count (NaN) per Column:
+Dst Port             0
+Protocol             0
+Timestamp            0
+Flow Duration        0
+Tot Fwd Pkts         0
+Tot Bwd Pkts         0
+TotLen Fwd Pkts      0
+TotLen Bwd Pkts      0
+Fwd Pkt Len Max      0
+Fwd Pkt Len Min      0
+Fwd Pkt Len Mean     0
+Fwd Pkt Len Std      0
+Bwd Pkt Len Max      0
+Bwd Pkt Len Min      0
+Bwd Pkt Len Mean     0
+Bwd Pkt Len Std      0
+Flow Byts/s          0
+Flow Pkts/s          0
+Flow IAT Mean        0
+Flow IAT Std         0
+Flow IAT Max         0
+Flow IAT Min         0
+Fwd IAT Tot          0
+Fwd IAT Mean         0
+Fwd IAT Std          0
+Fwd IAT Max          0
+Fwd IAT Min          0
+Bwd IAT Tot          0
+Bwd IAT Mean         0
+Bwd IAT Std          0
+Bwd IAT Max          0
+Bwd IAT Min          0
+Fwd PSH Flags        0
+Bwd PSH Flags        0
+Fwd URG Flags        0
+Bwd URG Flags        0
+Fwd Header Len       0
+Bwd Header Len       0
+Fwd Pkts/s           0
+Bwd Pkts/s           0
+Pkt Len Min          0
+Pkt Len Max          0
+Pkt Len Mean         0
+Pkt Len Std          0
+Pkt Len Var          0
+FIN Flag Cnt         0
+SYN Flag Cnt         0
+RST Flag Cnt         0
+PSH Flag Cnt         0
+ACK Flag Cnt         0
+URG Flag Cnt         0
+CWE Flag Count       0
+ECE Flag Cnt         0
+Down/Up Ratio        0
+Pkt Size Avg         0
+Fwd Seg Size Avg     0
+Bwd Seg Size Avg     0
+Fwd Byts/b Avg       0
+Fwd Pkts/b Avg       0
+Fwd Blk Rate Avg     0
+Bwd Byts/b Avg       0
+Bwd Pkts/b Avg       0
+Bwd Blk Rate Avg     0
+Subflow Fwd Pkts     0
+Subflow Fwd Byts     0
+Subflow Bwd Pkts     0
+Subflow Bwd Byts     0
+Init Fwd Win Byts    0
+Init Bwd Win Byts    0
+Fwd Act Data Pkts    0
+Fwd Seg Size Min     0
+Active Mean          0
+Active Std           0
+Active Max           0
+Active Min           0
+Idle Mean            0
+Idle Std             0
+Idle Max             0
+Idle Min             0
+Label                0
+dtype: int64

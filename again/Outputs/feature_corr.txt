@@ -1,0 +1,101 @@
+The following 16 features will be dropped due to high correlation: ['Fwd IAT Tot', 'Fwd IAT Mean', 'Fwd IAT Min', 'Pkt Len Min', 'Pkt Len 
+Max', 'SYN Flag Cnt', 'ECE Flag Cnt', 'Pkt Size Avg', 'Fwd Seg Size Avg', 'Bwd Seg Size Avg', 'Subflow Fwd Pkts', 'Subflow Fwd Byts', 'Subflow Bwd Pkts', 'Subflow Bwd Byts', 'Idle Max', 'Idle Min']
+Modified dataset saved at: D:\4th semester\SE\project\Dataset\afewstepsleft.csv
+Modified dataset shape: (1011097, 64)
+   Dst Port  Protocol  Timestamp  Flow Duration  Tot Fwd Pkts  Tot Bwd Pkts  \
+0  0.000000  0.000000   0.626427       0.938681      0.007576      0.000000
+1  0.000000  0.000000   0.630339       0.938679      0.007576      0.000000
+2  0.000000  0.000000   0.634251       0.938655      0.007576      0.000000
+3  0.000336  0.352941   0.639205       0.053783      0.053030      0.021739
+4  0.000336  0.352941   0.639436       0.073367      0.049242      0.023913
+
+   TotLen Fwd Pkts  TotLen Bwd Pkts  Fwd Pkt Len Max  Fwd Pkt Len Min  \
+0         0.000000         0.000000         0.000000              0.0
+1         0.000000         0.000000         0.000000              0.0
+2         0.000000         0.000000         0.000000              0.0
+3         0.044745         0.004184         0.509589              0.0
+4         0.041278         0.004066         0.509589              0.0
+
+   Fwd Pkt Len Mean  Fwd Pkt Len Std  Bwd Pkt Len Max  Bwd Pkt Len Min  \
+0          0.000000         0.000000         0.000000              0.0
+1          0.000000         0.000000         0.000000              0.0
+2          0.000000         0.000000         0.000000              0.0
+3          0.201071         0.306169         0.668493              0.0
+4          0.198741         0.317069         0.668493              0.0
+
+   Bwd Pkt Len Mean  Bwd Pkt Len Std  Flow Byts/s   Flow Pkts/s  \
+0          0.000000         0.000000     0.000000  4.982580e-09
+1          0.000000         0.000000     0.000000  4.982610e-09
+2          0.000000         0.000000     0.000000  4.982946e-09
+3          0.189363         0.393437     0.000025  1.928460e-06
+4          0.167301         0.383457     0.000018  1.411465e-06
+
+   Flow IAT Mean  Flow IAT Std  Flow IAT Max  Flow IAT Min  Fwd IAT Std  \
+0       0.469377      0.000002      0.469378  4.693760e-01     0.000002
+1       0.469376      0.000001      0.469376  4.693751e-01     0.000001
+2       0.469364      0.000004      0.469366  4.693621e-01     0.000004
+3       0.002241      0.002939      0.005616  1.833475e-07     0.001462
+4       0.003057      0.006073      0.016069  1.750135e-07     0.006323
+
+   Fwd IAT Max  Bwd IAT Tot  Bwd IAT Mean  Bwd IAT Std  Bwd IAT Max  \
+0     0.469378     0.000000      0.000000     0.000000     0.000000
+1     0.469376     0.000000      0.000000     0.000000     0.000000
+2     0.469366     0.000000      0.000000     0.000000     0.000000
+3     0.005616     0.046983      0.038335     0.024249     0.020286
+4     0.016069     0.064296      0.047215     0.040259     0.037797
+
+   Bwd IAT Min  Fwd PSH Flags  Bwd PSH Flags  Fwd URG Flags  Bwd URG Flags  \
+0     0.000000            0.0            0.0            0.0            0.0
+1     0.000000            0.0            0.0            0.0            0.0
+2     0.000000            0.0            0.0            0.0            0.0
+3     0.000047            0.0            0.0            0.0            0.0
+4     0.000008            0.0            0.0            0.0            0.0
+
+   Fwd Header Len  Bwd Header Len    Fwd Pkts/s  Bwd Pkts/s  Pkt Len Mean  \
+0        0.000000        0.000000  4.982580e-09    0.000000      0.000000
+1        0.000000        0.000000  4.982610e-09    0.000000      0.000000
+2        0.000000        0.000000  4.982946e-09    0.000000      0.000000
+3        0.074801        0.035621  1.153742e-06    0.000002      0.175628
+4        0.069896        0.039096  7.867532e-07    0.000001      0.167627
+
+   Pkt Len Std  Pkt Len Var  FIN Flag Cnt  RST Flag Cnt  PSH Flag Cnt  \
+0     0.000000     0.000000           0.0           0.0           0.0
+1     0.000000     0.000000           0.0           0.0           0.0
+2     0.000000     0.000000           0.0           0.0           0.0
+3     0.380725     0.144951           0.0           0.0           1.0
+4     0.383367     0.146970           0.0           0.0           1.0
+
+   ACK Flag Cnt  URG Flag Cnt  CWE Flag Count  Down/Up Ratio  Fwd Byts/b Avg  \
+0           0.0           0.0             0.0            0.0             0.0
+1           0.0           0.0             0.0            0.0             0.0
+2           0.0           0.0             0.0            0.0             0.0
+3           0.0           0.0             0.0            0.0             0.0
+4           0.0           0.0             0.0            0.0             0.0
+
+   Fwd Pkts/b Avg  Fwd Blk Rate Avg  Bwd Byts/b Avg  Bwd Pkts/b Avg  \
+0             0.0               0.0             0.0             0.0
+1             0.0               0.0             0.0             0.0
+2             0.0               0.0             0.0             0.0
+3             0.0               0.0             0.0             0.0
+4             0.0               0.0             0.0             0.0
+
+   Bwd Blk Rate Avg  Init Fwd Win Byts  Init Bwd Win Byts  Fwd Act Data Pkts  \
+0               0.0           0.000000           0.000000               0.00
+1               0.0           0.000000           0.000000               0.00
+2               0.0           0.000000           0.000000               0.00
+3               0.0           1.000000           0.003571               0.15
+4               0.0           0.088638           0.003571               0.15
+
+   Fwd Seg Size Min  Active Mean  Active Std  Active Max  Active Min  \
+0          0.000000          0.0         0.0         0.0         0.0
+1          0.000000          0.0         0.0         0.0         0.0
+2          0.000000          0.0         0.0         0.0         0.0
+3          0.666667          0.0         0.0         0.0         0.0
+4          0.666667          0.0         0.0         0.0         0.0
+
+   Idle Mean  Idle Std   Label
+0   0.469377  0.000002  Benign
+1   0.469376  0.000002  Benign
+2   0.469364  0.000004  Benign
+3   0.000000  0.000000  Benign
+4   0.000000  0.000000  Benign

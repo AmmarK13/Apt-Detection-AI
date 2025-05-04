@@ -1,0 +1,9 @@
+
+📊 Correlation of high-negative columns with 'Label':
+
+Init Fwd Win Byts    0.575375
+Init Bwd Win Byts   -0.292343
+Name: Label_Numeric, dtype: float64
+
+Init Fwd win Byt had high corr with Label despite having alot of negative values and bwd not so much
+but i decided to keep both

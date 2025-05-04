@@ -1,0 +1,232 @@
+📊 File Details:
+Rows: 10000, Columns: 61
+
+🧠 Data Types:
+ Dst Port               int64
+Protocol               int64
+Flow Duration          int64
+Tot Fwd Pkts           int64
+Tot Bwd Pkts           int64
+TotLen Fwd Pkts        int64
+TotLen Bwd Pkts        int64
+Fwd Pkt Len Max        int64
+Fwd Pkt Len Min        int64
+Fwd Pkt Len Mean     float64
+Fwd Pkt Len Std      float64
+Bwd Pkt Len Max        int64
+Bwd Pkt Len Min        int64
+Bwd Pkt Len Mean     float64
+Bwd Pkt Len Std      float64
+Flow Byts/s          float64
+Flow Pkts/s          float64
+Flow IAT Mean        float64
+Flow IAT Std         float64
+Flow IAT Max           int64
+Flow IAT Min           int64
+Fwd IAT Tot            int64
+Fwd IAT Mean         float64
+Fwd IAT Std          float64
+Fwd IAT Max            int64
+Fwd IAT Min            int64
+Bwd IAT Tot            int64
+Bwd IAT Mean         float64
+Bwd IAT Std          float64
+Bwd IAT Max            int64
+Bwd IAT Min            int64
+Fwd Header Len         int64
+Bwd Header Len         int64
+Fwd Pkts/s           float64
+Bwd Pkts/s           float64
+Pkt Len Min            int64
+Pkt Len Max            int64
+Pkt Len Mean         float64
+Pkt Len Std          float64
+Pkt Len Var          float64
+Down/Up Ratio          int64
+Pkt Size Avg         float64
+Fwd Seg Size Avg     float64
+Bwd Seg Size Avg     float64
+Subflow Fwd Pkts       int64
+Subflow Fwd Byts       int64
+Subflow Bwd Pkts       int64
+Subflow Bwd Byts       int64
+Init Fwd Win Byts      int64
+Init Bwd Win Byts      int64
+Fwd Act Data Pkts      int64
+Fwd Seg Size Min       int64
+Active Mean          float64
+Active Std           float64
+Active Max             int64
+Active Min             int64
+Idle Mean            float64
+Idle Std             float64
+Idle Max               int64
+Idle Min               int64
+Label                 object
+dtype: object
+
+🕳️ Missing Values per Column:
+ Dst Port             0
+Protocol             0
+Flow Duration        0
+Tot Fwd Pkts         0
+Tot Bwd Pkts         0
+TotLen Fwd Pkts      0
+TotLen Bwd Pkts      0
+Fwd Pkt Len Max      0
+Fwd Pkt Len Min      0
+Fwd Pkt Len Mean     0
+Fwd Pkt Len Std      0
+Bwd Pkt Len Max      0
+Bwd Pkt Len Min      0
+Bwd Pkt Len Mean     0
+Bwd Pkt Len Std      0
+Flow Byts/s          0
+Flow Pkts/s          0
+Flow IAT Mean        0
+Flow IAT Std         0
+Flow IAT Max         0
+Flow IAT Min         0
+Fwd IAT Tot          0
+Fwd IAT Mean         0
+Fwd IAT Std          0
+Fwd IAT Max          0
+Fwd IAT Min          0
+Bwd IAT Tot          0
+Bwd IAT Mean         0
+Bwd IAT Std          0
+Bwd IAT Max          0
+Bwd IAT Min          0
+Fwd Header Len       0
+Bwd Header Len       0
+Fwd Pkts/s           0
+Bwd Pkts/s           0
+Pkt Len Min          0
+Pkt Len Max          0
+Pkt Len Mean         0
+Pkt Len Std          0
+Pkt Len Var          0
+Down/Up Ratio        0
+Pkt Size Avg         0
+Fwd Seg Size Avg     0
+Bwd Seg Size Avg     0
+Subflow Fwd Pkts     0
+Subflow Fwd Byts     0
+Subflow Bwd Pkts     0
+Subflow Bwd Byts     0
+Init Fwd Win Byts    0
+Init Bwd Win Byts    0
+Fwd Act Data Pkts    0
+Fwd Seg Size Min     0
+Active Mean          0
+Active Std           0
+Active Max           0
+Active Min           0
+Idle Mean            0
+Idle Std             0
+Idle Max             0
+Idle Min             0
+Label                0
+dtype: int64
+
+🔁 Unique Values per Column:
+ Dst Port              682
+Protocol                3
+Flow Duration        5171
+Tot Fwd Pkts           74
+Tot Bwd Pkts           88
+TotLen Fwd Pkts       614
+TotLen Bwd Pkts       798
+Fwd Pkt Len Max       387
+Fwd Pkt Len Min        62
+Fwd Pkt Len Mean      757
+Fwd Pkt Len Std       751
+Bwd Pkt Len Max       264
+Bwd Pkt Len Min       178
+Bwd Pkt Len Mean      811
+Bwd Pkt Len Std       662
+Flow Byts/s          4995
+Flow Pkts/s          5300
+Flow IAT Mean        5260
+Flow IAT Std         3908
+Flow IAT Max         4917
+Flow IAT Min         1661
+Fwd IAT Tot          4231
+Fwd IAT Mean         4229
+Fwd IAT Std          3442
+Fwd IAT Max          4183
+Fwd IAT Min          1492
+Bwd IAT Tot          3287
+Bwd IAT Mean         3293
+Bwd IAT Std          3154
+Bwd IAT Max          3087
+Bwd IAT Min          1341
+Fwd Header Len        140
+Bwd Header Len        198
+Fwd Pkts/s           5276
+Bwd Pkts/s           4660
+Pkt Len Min            60
+Pkt Len Max           287
+Pkt Len Mean         1158
+Pkt Len Std          1042
+Pkt Len Var          1049
+Down/Up Ratio           7
+Pkt Size Avg         1117
+Fwd Seg Size Avg      757
+Bwd Seg Size Avg      811
+Subflow Fwd Pkts       74
+Subflow Fwd Byts      614
+Subflow Bwd Pkts       88
+Subflow Bwd Byts      798
+Init Fwd Win Byts     205
+Init Bwd Win Byts     271
+Fwd Act Data Pkts      34
+Fwd Seg Size Min        7
+Active Mean           606
+Active Std            451
+Active Max            606
+Active Min            597
+Idle Mean             691
+Idle Std              523
+Idle Max              688
+Idle Min              689
+Label                   2
+dtype: int64
+
+🔍 Sample Rows:
+    Dst Port  Protocol  Flow Duration  Tot Fwd Pkts  Tot Bwd Pkts  TotLen Fwd Pkts  TotLen Bwd Pkts  Fwd Pkt Len Max  Fwd Pkt Len Min  Fwd Pkt Len Mean  Fwd Pkt Len Std  Bwd Pkt Len Max  Bwd Pkt Len Min  Bwd Pkt Len Mean  Bwd Pkt Len Std  Flow Byts/s    Flow Pkts/s  Flow IAT Mean   Flow IAT Std  Flow IAT Max  Flow IAT Min  Fwd IAT Tot  Fwd IAT Mean    Fwd IAT Std  Fwd IAT Max  Fwd IAT Min  Bwd IAT Tot   Bwd IAT Mean 
+   Bwd IAT Std  Bwd IAT Max  Bwd IAT Min  Fwd Header Len  Bwd Header Len     Fwd Pkts/s     Bwd Pkts/s  Pkt Len Min  Pkt Len Max  Pkt Len Mean  Pkt Len Std   Pkt Len Var  Down/Up Ratio  Pkt Size Avg  Fwd Seg Size Avg  Bwd Seg Size Avg  Subflow Fwd Pkts  Subflow Fwd Byts  Subflow 
+Bwd Pkts  Subflow Bwd Byts  Init Fwd Win Byts  Init Bwd Win Byts  Fwd Act Data Pkts  Fwd Seg Size Min  Active Mean  Active Std  Active Max  
+Active Min  Idle Mean  Idle Std  Idle Max  Idle Min   Label
+0        22         6              7             1             1                0                0                0                0        
+  0.000000         0.000000                0                0              0.00         0.000000     0.000000  285714.285714       7.000000 
+      0.000000             7             7            0           0.0       0.000000            0            0            0       0.000000  
+     0.000000            0            0              32              32  142857.142857  142857.142857            0            0      0.000000     0.000000      0.000000              1      0.000000          0.000000              0.00                 1                 0
+      1                 0                241                230                  0                32          0.0         0.0           0   
+        0        0.0       0.0         0         0  Attack
+1     50748         6            129             2             0                0                0                0                0        
+  0.000000         0.000000                0                0              0.00         0.000000     0.000000   15503.875969     129.000000 
+      0.000000           129           129          129         129.0       0.000000          129          129            0       0.000000  
+     0.000000            0            0              40               0   15503.875969       0.000000            0            0      0.000000     0.000000      0.000000              0      0.000000          0.000000              0.00                 2                 0
+      0                 0                131                 -1                  0                20          0.0         0.0           0   
+        0        0.0       0.0         0         0  Benign
+2       445         6        1955223             7             5              184              504              129                0        
+ 26.285714        48.382897              409                0            100.80       177.131872   351.878021       6.137407  177747.545455 
+ 185285.794486        470745            67      1955223      325870.5  177782.247207       528481         8598      1661230  415307.500000  
+ 84422.523189       487912       312461             152             112       3.580154       2.557253            0          409     52.923077   115.027867  13231.410256              0     57.333333         26.285714            100.80                 7               184
+      5               504               8192                260                  4                20          0.0         0.0           0   
+        0        0.0       0.0         0         0  Benign
+3     50670         6             17             1             1                0                0                0                0        
+  0.000000         0.000000                0                0              0.00         0.000000     0.000000  117647.058824      17.000000 
+      0.000000            17            17            0           0.0       0.000000            0            0            0       0.000000  
+     0.000000            0            0              20              20   58823.529412   58823.529412            0            0      0.000000     0.000000      0.000000              1      0.000000          0.000000              0.00                 1                 0
+      1                 0                172                255                  0                20          0.0         0.0           0   
+        0        0.0       0.0         0         0  Benign
+4      3389         6        2416834             8             8             1144             1618              677                0        
+143.000000       227.969923             1173                0            202.25       403.753372  1142.817421       6.620231  161122.266667 
+ 243746.602291        953211            83      2416834      345262.0  536997.567249      1554324          392      2234168  319166.857143  
+288148.240601       953211       168550             172             172       3.310116       3.310116            0         1173    162.470588   310.945959  96687.389706              1    172.625000        143.000000            202.25                 8              1144
+      8              1618               8192              62856                  5                20          0.0         0.0           0   
+        0        0.0       0.0         0         0  Benign
+
+✅ File inspection complete.
