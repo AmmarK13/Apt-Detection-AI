@@ -16,7 +16,7 @@ columns = [col for col in df.columns if col != 'Label']
 corr_matrix = df[columns].corr().abs()
 
 # === Define threshold for high correlation ===
-threshold = 0.99
+threshold = 0.90
 
 # === Find features with high correlation ===
 upper = corr_matrix.where(np.triu(np.ones(corr_matrix.shape), k=1).astype(bool))
