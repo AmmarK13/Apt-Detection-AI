@@ -1,12 +1,6 @@
-# run_smoke_tests.py
 import os
 import sys
 import time
-
-# Add the project root to the path to import from code module
-sys.path.append("d:/University/Software Engineering/Project/Apt-Detection-AI/webAttacks")
-
-# Import individual test modules
 from testing.smoke_test_model_loading import test_model_loading
 from testing.smoke_test_dependencies import test_dependencies
 from testing.smoke_test_data_loading import test_data_loading
@@ -15,6 +9,8 @@ from testing.smoke_test_prediction import test_prediction
 from testing.smoke_test_prediction_values import test_prediction_values
 from testing.smoke_test_performance import test_prediction_speed
 from testing.smoke_test_model_params import test_model_parameters
+
+sys.path.append("d:/University/Software Engineering/Project/Apt-Detection-AI/webAttacks")
 
 def run_all_smoke_tests():
     print("\n===== STARTING SMOKE TESTS FOR WEB ATTACK DETECTION MODEL =====\n")

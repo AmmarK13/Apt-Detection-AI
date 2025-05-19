@@ -14,7 +14,7 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-def main():
+def run_data_pipeline():
     # Initialize the pipeline manager
     pipeline = PipelineManager()
     
@@ -47,4 +47,4 @@ def main():
         raise
 
 if __name__ == "__main__":
-    main()
+    run_data_pipeline()
