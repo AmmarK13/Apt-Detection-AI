@@ -4,7 +4,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 
 # Load the dataset
-df = pd.read_csv("UNSW_NB15/cleaned_attempt3/4_remove_features.csv")
+df = pd.read_csv("UNSW_NB15/attempt_3/cleaned_attempt3/4_remove_features.csv")
 
 # Separate features and label
 X = df.drop(columns=["label"])

@@ -157,10 +157,10 @@ def evaluate_model(input_file: str, model_path: str, required_features: list, ca
 # RUNNING BLOCK (Smoke Test)
 # ------------------------
 if __name__ == "__main__":
-
-
-    new_file = "UNSW_NB15/transformation/synthetic_data.csv"
+    # new_file = "UNSW_NB15/transformation/synthetic_data.csv"
     # new_file = "UNSW_NB15/transformation/e.csv"
+
+    new_file = "UNSW_NB15/cleaned_data/reduced_testing_set.csv"
     model_path = "UNSW_NB15/attempt_3/models/random_forest_model.joblib"
 
     required_features = [
