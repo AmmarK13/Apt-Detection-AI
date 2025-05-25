@@ -1,0 +1,7 @@
+ Checking balance in binary columns...
+
+❌ Pkt Len Min is skewed: 0 = 99.96%, 31 = 0.04%
+❌ Label is skewed: Attack = 58.00%, Benign = 42.00%
+
+
+This means i should drop Pkt Len Min since its 99 % 0 and 0.04 % 31

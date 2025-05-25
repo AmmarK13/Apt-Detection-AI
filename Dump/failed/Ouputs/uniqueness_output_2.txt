@@ -1,0 +1,15 @@
+Columns with 2 to 7 unique values:
+
+🔹 Protocol (3 unique values): [np.int64(0), np.int64(6), np.int64(17)]
+🔹 Fwd PSH Flags (2 unique values): [np.int64(0), np.int64(1)]
+🔹 FIN Flag Cnt (2 unique values): [np.int64(0), np.int64(1)]
+🔹 SYN Flag Cnt (2 unique values): [np.int64(0), np.int64(1)]
+🔹 RST Flag Cnt (2 unique values): [np.int64(0), np.int64(1)]
+🔹 PSH Flag Cnt (2 unique values): [np.int64(0), np.int64(1)]
+🔹 ACK Flag Cnt (2 unique values): [np.int64(0), np.int64(1)]
+🔹 URG Flag Cnt (2 unique values): [np.int64(0), np.int64(1)]
+🔹 ECE Flag Cnt (2 unique values): [np.int64(0), np.int64(1)]
+🔹 Down/Up Ratio (7 unique values): [np.int64(0), np.int64(1), np.int64(2), np.int64(3), np.int64(4), np.int64(6), np.int64(11)]
+🔹 Fwd Seg Size Min (7 unique values): [np.int64(0), np.int64(8), np.int64(20), np.int64(24), np.int64(28), np.int64(32), np.int64(40)]     
+🔹 Label (2 unique values): ['Attack', 'Benign']
+
